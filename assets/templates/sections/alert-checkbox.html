@@ -1,0 +1,57 @@
+<alert-checkbox class="ion-page">
+
+    <ion-header section="Checkbox"></ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <button onClick={ onAlert } color="danger" ion-button block>
+                <span>Show Checkbox Alert</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onAlert = function(){
+        $Alert.show({
+            title: "Which planets have you visited?",
+            cancel: true,
+            checkbox: {
+                callback: function(items){
+                    console.dir(items);
+                },
+                items: [
+                    {
+                        title: "Alderaan",
+                        checked: true
+                    },
+                    {
+                        title: "Bespin",
+                        checked: false
+                    },
+                    {
+                        title: "Coruscant",
+                        checked: false
+                    },
+                    {
+                        title: "Endor",
+                        checked: false
+                    },
+                    {
+                        title: "Hoth",
+                        checked: false
+                    },
+                    {
+                        title: "Jakku",
+                        checked: false
+                    }
+                ]
+            }
+        });
+    };
+
+</script>
+
+</alert-checkbox>

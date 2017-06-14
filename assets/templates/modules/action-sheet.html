@@ -1,4 +1,4 @@
-<ion-alert>
+<ion-action-sheet class="alert-{ plt }">
 
     <ion-backdrop ref="backdrop" onClick={ hide } onUpdate="none"></ion-backdrop>
 
@@ -9,13 +9,15 @@
         </alert-head>
         <alert-message if={ data.message }>{ data.message }</alert-message>
         <alert-input-group if={ data.prompt }>
-            <input ref="input" placeholder={ data.prompt && data.prompt.placeholder } type="text">
+            <input ref="input" class="alert-input" placeholder={ data.prompt && data.prompt.placeholder } type="text">
         </alert-input-group>
         <alert-radio-group if={ data.radio && !_.isEmpty(items) }>
-            <button onClick={ onRadioButton } each={ item in items } no-reorder ion-radio-button aria-checked={ item.checked }>
-                <span>
-                    <alert-radio-icon></alert-radio-icon>
-                    <alert-radio-label>{ item && item.title || item }</alert-radio-label>
+            <button onClick={ onRadioButton } each={ item in items } no-reorder class="alert-radio alert-radio-button-{ plt }" aria-checked={ item.checked }>
+                <span class="button-inner">
+                    <div class="alert-radio-icon">
+                        <div class="alert-radio-inner"></div>
+                    </div>
+                    <div class="alert-radio-label">{ item && item.title || item }</div>
                 </span>
             </button>
         </alert-radio-group>
@@ -120,4 +122,4 @@
 
 </script>
 
-</ion-alert>
+</ion-action-sheet>

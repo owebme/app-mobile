@@ -1,0 +1,4 @@
+ion-badge {
+    @extend .badge-#{$plt};
+    @include padding(5px, 8px, 2px);
+}

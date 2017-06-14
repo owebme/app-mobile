@@ -1,6 +1,6 @@
 ion-icon {
     @each $title in (android, angular, apple, bitcoin, buffer, chrome, codepen, css3, designernews, dribbble, dropbox, euro, facebook, foursquare, freebsd-devil, github, google, googleplus, hackernews, html5, instagram, javascript, linkedin, markdown, nodejs, octocat, pinterest, playstation, python, reddit, rss, sass, skype, snapchat, steam, tumblr, tux, twitch, twitter, usd, vimeo, whatsapp, windows, wordpress, xbox, yahoo, yen, youtube){
-        &[name=#{$title}]{
+        &[name=logo-#{$title}]{
             @extend .ion-logo-#{$title};
         }
     }

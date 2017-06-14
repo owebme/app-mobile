@@ -1,0 +1,32 @@
+<alert-confirm class="ion-page">
+
+    <ion-header section="Prompt"></ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <button color="secondary" onClick={ onAlert } ion-button block>
+                <span>Show Prompt Alert</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onAlert = function(){
+        $Alert.show({
+            title: "Use this lightsaber?",
+            message: "Do you agree to use this lightsaber to do good across the intergalactic galaxy?",
+            cancel: {
+                title: "Disagree"
+            },
+            success: {
+                title: "Agree"
+            }
+        });
+    };
+
+</script>
+
+</alert-confirm>

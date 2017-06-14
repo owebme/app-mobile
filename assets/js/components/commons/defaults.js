@@ -2,7 +2,8 @@
 
 var $defaults = {
     alert: {
-        cancel: "Отмена",
-        success: "OK"
+        cancel: "Cancel",
+        success: "OK",
+        propTitle: "title"
     }
 }

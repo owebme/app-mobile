@@ -1,0 +1,26 @@
+<alert-basic class="ion-page">
+
+    <ion-header section="Alerts"></ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <button color="dark" onClick={ onAlert } ion-button block>
+                <span>Show Basic Alert</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onAlert = function(){
+        $Alert.show({
+            title: "New Friend!",
+            message: "Your friend, Obi wan Kenobi, just approved your friend request!"
+        });
+    };
+
+</script>
+
+</alert-basic>

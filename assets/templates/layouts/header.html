@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-buttons start if={ opts.buttons }>
+        <ion-buttons start if={ opts.buttons !== undefined }>
             <button ion-button icon-only>
                 <span><ion-icon name="contact"></ion-icon></span>
             </button>
@@ -11,7 +11,7 @@
                 <ion-toolbar-title>{ opts.section }</ion-toolbar-title>
             </ion-title>
         </ion-toolbar-content>
-        <ion-buttons end if={ opts.buttons }>
+        <ion-buttons end if={ opts.buttons !== undefined }>
             <button ion-button icon-only>
                 <span><ion-icon name="search"></ion-icon></span>
             </button>

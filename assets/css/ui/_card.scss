@@ -5,4 +5,7 @@ ion-card {
     &-content {
         @extend .card-content-#{$plt};
     }
+    &-title {
+        @extend .card-title-#{$plt};
+    }
 }

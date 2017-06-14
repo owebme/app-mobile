@@ -1,0 +1,36 @@
+<alert-prompt class="ion-page">
+
+    <ion-header section="Prompt"></ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <button color="secondary" onClick={ onAlert } ion-button block>
+                <span>Show Prompt Alert</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onAlert = function(){
+        $Alert.show({
+            title: "Login",
+            message: "Enter a name for this new album you're so keen on adding",
+            cancel: true,
+            success: {
+                title: "Save"
+            },
+            prompt: {
+                placeholder: "Title",
+                callback: function(value){
+                    console.log(value);
+                }
+            }
+        });
+    };
+
+</script>
+
+</alert-prompt>
