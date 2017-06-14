@@ -1,0 +1,88 @@
+<buttons-in-components class="ion-page">
+
+    <ion-header>
+        <ion-navbar>
+            <ion-buttons start>
+                <button ion-button icon-only>
+                    <span><ion-icon name="contact"></ion-icon></span>
+                </button>
+            </ion-buttons>
+            <ion-toolbar-content>
+                <ion-title>
+                    <ion-toolbar-title>Buttons In Components</ion-toolbar-title>
+                </ion-title>
+            </ion-toolbar-content>
+            <ion-buttons end>
+                <button ion-button icon-only>
+                    <span><ion-icon name="search"></ion-icon></span>
+                </button>
+            </ion-buttons>
+            <toolbar-background></toolbar-background>
+        </ion-navbar>
+    </ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <ion-card class="mb30">
+                <ion-card-content class="bg-snow458">
+                    <img class="w-auto h44 m0-auto mtb-m" src="/assets/img/img-icon.png">
+                </ion-card-content>
+                <ion-item>
+                    <button ion-button clear item-start>
+                        <span>Like</span>
+                    </button>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label></ion-label>
+                        </input-wrapper>
+                        <button ion-button clear item-end>
+                            <span>Comment</span>
+                        </button>
+                    </item-inner>
+                </ion-item>
+            </ion-card>
+
+            <ion-list>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Inner Button</ion-label>
+                        </input-wrapper>
+                        <button ion-button item-end outline item-button>
+                            <span>Outline</span>
+                        </button>
+                    </item-inner>
+                </ion-item>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Left Icon Button</ion-label>
+                        </input-wrapper>
+                        <button ion-button icon-left item-end outline item-button>
+                            <span>
+                                <ion-icon name="star"></ion-icon>
+                                Left Icon
+                            </span>
+                        </button>
+                    </item-inner>
+                </ion-item>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Right Icon Button</ion-label>
+                        </input-wrapper>
+                        <button ion-button icon-right item-end outline item-button>
+                            <span>
+                                Right Icon
+                                <ion-icon name="star"></ion-icon>
+                            </span>
+                        </button>
+                    </item-inner>
+                </ion-item>
+             </ion-list>
+
+        </scroll-content>
+    </ion-content>
+
+</buttons-in-components>

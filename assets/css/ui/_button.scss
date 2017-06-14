@@ -1,0 +1,62 @@
+[nohover]{
+    @extend .disable-hover;
+}
+button[ion-button] {
+    @extend .button;
+    @extend .button-#{$plt};
+    @extend .disable-hover;
+    @extend .transition-default;
+
+    &.activated {
+        @extend .scale-95;
+    }
+    &:active {
+        @extend .activated;
+    }
+    &[item-button] {
+        @extend .item-button;
+    }    
+    &[block]{
+        @extend .button-block;
+        @extend .button-block-#{$plt};
+    }
+    &[full]{
+        @extend .button-full;
+        @extend .button-full-#{$plt};
+    }
+    &[round]{
+        @extend .button-round-#{$plt};
+    }
+    @each $title in (small, large){
+        &[#{$title}]{
+            @extend .button-#{$title}-#{$plt};
+        }
+    }
+    @each $title in (light, secondary, danger, dark){
+        &[color=#{$title}]{
+            @extend .button-#{$plt}-#{$title};
+        }
+    }
+    &[outline]{
+        @extend .button-outline;
+        @extend .button-outline-#{$plt};
+
+        @each $title in (light, secondary, danger, dark){
+            &[color=#{$title}]{
+                @extend .button-outline-#{$plt}-#{$title};
+            }
+        }
+    }
+    &[clear]{
+        @extend .button-clear-#{$plt};
+
+        @each $title in (light, secondary, danger, dark){
+            &[color=#{$title}]{
+                @extend .button-clear-#{$plt}-#{$title};
+            }
+        }
+    }
+    span {
+        @extend .button-inner;
+    }
+}

@@ -1,0 +1,26 @@
+ion-app,
+app-root {
+    @extend .app-root;
+}
+
+// iOS Default Theme
+// ----------------------------------
+
+$font-family-ios-base:                'HelveticaNeue';
+$font-size-ios-base:                  1.5rem;
+$font-size-md-base:                   1.5rem;
+$font-size-wp-base:                   1.5rem;
+$cordova-ios-statusbar-padding:       20px;
+
+// iOS Toolbar
+// --------------------------------------------------
+
+$toolbar-ios-height:                  44px;
+$toolbar-ios-button-font-size:        1.7rem;
+$toolbar-ios-title-font-size:         1.8rem;
+
+// iOS Item
+// --------------------------------------------------
+
+$item-ios-padding-top:                14px;
+$item-ios-padding-bottom:             13px;

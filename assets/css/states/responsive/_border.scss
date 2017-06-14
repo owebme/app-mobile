@@ -1,0 +1,34 @@
+@media screen and (min-width: $w768) {
+    .d-borderWidth-1 {
+        border-width:1px;
+    }
+    .d-borderLeftWidth-1 {
+        border-left-width:1px;
+    }
+    .d-borderRightWidth-1 {
+        border-right-width:1px;
+    }
+    .d-borderTopWidth-1 {
+        border-top-width:1px;
+    }
+    .d-borderBottomWidth-1 {
+        border-bottom-width:1px;
+    }
+}
+@media screen and (max-width: $w767) {
+    .xs-borderWidth-1 {
+        border-width:1px;
+    }
+    .xs-borderLeftWidth-1 {
+        border-left-width:1px;
+    }
+    .xs-borderRightWidth-1 {
+        border-right-width:1px;
+    }
+    .xs-borderTopWidth-1 {
+        border-top-width:1px;
+    }
+    .xs-borderBottomWidth-1 {
+        border-bottom-width:1px;
+    }
+}

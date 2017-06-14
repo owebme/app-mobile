@@ -1,0 +1,19 @@
+<ion-app class="app-root-{ plt } { plt } platform-mobile platform-{ plt } platform-mobileweb">
+
+    <app-root></app-root>
+
+    <ion-alert></ion-alert>
+
+<script>
+
+    window.$root = this;
+
+    this.on("mount", function(){
+
+        $Alert = $root.tags["ion-alert"];
+
+    });
+
+</script>
+
+</ion-app>

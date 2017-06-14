@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>App mobile</title>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+	<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="format-detection" content="telephone=no" />
+	<meta name="google" content="notranslate" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/assets/css/styleguide.css">
+</head>
+<body>
+
+    <ion-app></ion-app>
+
+    <!--/ VENDORS /-->
+    <script src="/assets/js/libs/jquery.min.js"></script>
+    <script src="/assets/js/libs/jquery.mobile.custom.min.js"></script>
+    <script src="/assets/js/libs/modernizr.custom.js"></script>
+    <script src="/assets/js/libs/fastclick.js"></script>
+    <script src="/assets/js/libs/riot-3.5.1/riot+compiler.update.js"></script>
+    <script src="/assets/js/libs/afterlag-js/dist/afterlag.min.js"></script>
+    <script src="/assets/js/libs/baobab.js"></script>
+    <script src="/assets/js/libs/daterangepicker/moment.min.js"></script>
+    <script src="/assets/js/libs/daterangepicker/daterangepicker.js"></script>
+    <script src="/assets/js/libs/clockpicker/dist/bootstrap-clockpicker.js"></script>
+    <script src="/assets/js/libs/underscore-min.js"></script>
+    <script src="/assets/js/components/commons/app.js"></script>
+    <script src="/assets/js/components/commons/common.js"></script>
+    <script src="/assets/js/components/commons/modules.js"></script>
+    <script src="/assets/js/components/commons/utils.js"></script>
+    <script src="/assets/js/components/commons/afterlag.js"></script>
+    <script src="/assets/js/components/commons/animation/alert.js"></script>
+    <script src="/assets/js/components/commons/defaults.js"></script>
+    <script src="/assets/js/libs/anime/anime.js"></script>
+
+    <!--/ Root /-->
+    <script src="/assets/templates/root.html" type="riot/tag"></script>
+    <script src="/assets/templates/app.html" type="riot/tag"></script>
+
+    <!--/ Layouts /-->
+    <script src="/assets/templates/layouts/page.html" type="riot/tag"></script>
+
+    <!--/ Sections /-->
+    <script src="/assets/templates/sections/buttons-in-components.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/icon-buttons.html" type="riot/tag"></script>
+
+    <!--/ Modules /-->
+    <script src="/assets/templates/modules/alert.html" type="riot/tag"></script>
+
+
+    <!--/ UI elements /-->
+    <script src="/assets/templates/ui/alert.html" type="riot/tag"></script>
+
+    <script>
+        window.plt = "ios";
+        riot.compile(function(){
+            riot.mount("*");
+        });
+    </script>
+
+</body>
+</html>

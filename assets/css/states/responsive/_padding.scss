@@ -1,0 +1,202 @@
+@each $title, $size in (xxs: 5px, xss: 7.5px, xs: 10px, s: 15px, m: 20px, l: 40px, xl: 80px){
+    @media screen and (min-width: $w768) and (max-width: $w1024) {
+        .md-p-#{$title} {
+            padding:$size;
+        }
+        .md-pl-#{$title} {
+            padding-left:$size;
+        }
+        .md-pr-#{$title} {
+            padding-right:$size;
+        }
+        .md-pt-#{$title} {
+            padding-top:$size;
+        }
+        .md-pb-#{$title} {
+            padding-bottom:$size;
+        }
+        .md-ptb-#{$title} {
+            padding-top:$size;
+            padding-bottom:$size;
+        }
+        .md-plr-#{$title} {
+            padding-left:$size;
+            padding-right:$size;
+        }
+    }
+    @media screen and (min-width: $w768) and (max-width: $w991) {
+        .sm-p-#{$title} {
+            padding:$size;
+        }
+        .sm-pl-#{$title} {
+            padding-left:$size;
+        }
+        .sm-pr-#{$title} {
+            padding-right:$size;
+        }
+        .sm-pt-#{$title} {
+            padding-top:$size;
+        }
+        .sm-pb-#{$title} {
+            padding-bottom:$size;
+        }
+        .sm-ptb-#{$title} {
+            padding-top:$size;
+            padding-bottom:$size;
+        }
+        .sm-plr-#{$title} {
+            padding-left:$size;
+            padding-right:$size;
+        }
+    }
+    @media screen and (max-width: $w991) {
+        .xsm-p-#{$title} {
+            padding:$size;
+        }
+        .xsm-pl-#{$title} {
+            padding-left:$size;
+        }
+        .xsm-pr-#{$title} {
+            padding-right:$size;
+        }
+        .xsm-pt-#{$title} {
+            padding-top:$size;
+        }
+        .xsm-pb-#{$title} {
+            padding-bottom:$size;
+        }
+        .xsm-ptb-#{$title} {
+            padding-top:$size;
+            padding-bottom:$size;
+        }
+        .xsm-plr-#{$title} {
+            padding-left:$size;
+            padding-right:$size;
+        }
+    }
+    @media screen and (max-width: $w767) {
+        .xs-p-#{$title} {
+            padding:$size;
+        }
+        .xs-pl-#{$title} {
+            padding-left:$size;
+        }
+        .xs-pr-#{$title} {
+            padding-right:$size;
+        }
+        .xs-pt-#{$title} {
+            padding-top:$size;
+        }
+        .xs-pb-#{$title} {
+            padding-bottom:$size;
+        }
+        .xs-ptb-#{$title} {
+            padding-top:$size;
+            padding-bottom:$size;
+        }
+        .xs-plr-#{$title} {
+            padding-left:$size;
+            padding-right:$size;
+        }
+    }
+}
+@media screen and (min-width: $w768) and (max-width: $w1024) {
+    .md-p0 {
+        padding:0;
+    }
+    .md-pt0 {
+        padding-top:0;
+    }
+    .md-pr0 {
+        padding-right:0;
+    }
+    .md-pb0 {
+        padding-bottom:0;
+    }
+    .md-pl0 {
+        padding-left:0;
+    }
+    .md-ptb0 {
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .md-plr0 {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+@media screen and (min-width: $w768) and (max-width: $w991) {
+    .sm-p0 {
+        padding:0;
+    }
+    .sm-pt0 {
+        padding-top:0;
+    }
+    .sm-pr0 {
+        padding-right:0;
+    }
+    .sm-pb0 {
+        padding-bottom:0;
+    }
+    .sm-pl0 {
+        padding-left:0;
+    }
+    .sm-ptb0 {
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .sm-plr0 {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+@media screen and (max-width: $w991) {
+    .xsm-p0 {
+        padding:0;
+    }
+    .xsm-pt0 {
+        padding-top:0;
+    }
+    .xsm-pr0 {
+        padding-right:0;
+    }
+    .xsm-pb0 {
+        padding-bottom:0;
+    }
+    .xsm-pl0 {
+        padding-left:0;
+    }
+    .xsm-ptb0 {
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .xsm-plr0 {
+        padding-left:0;
+        padding-right:0;
+    }
+}
+@media screen and (max-width: $w767) {
+    .xs-p0 {
+        padding:0;
+    }
+    .xs-pt0 {
+        padding-top:0;
+    }
+    .xs-pr0 {
+        padding-right:0;
+    }
+    .xs-pb0 {
+        padding-bottom:0;
+    }
+    .xs-pl0 {
+        padding-left:0;
+    }
+    .xs-ptb0 {
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .xs-plr0 {
+        padding-left:0;
+        padding-right:0;
+    }
+}

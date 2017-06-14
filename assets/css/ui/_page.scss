@@ -1,0 +1,7 @@
+ion-page {
+    @extend .ion-page;
+    @extend .show-page;
+}
+.ion-page {
+    @extend .show-page;
+}

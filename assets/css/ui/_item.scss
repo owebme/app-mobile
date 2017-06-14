@@ -1,0 +1,8 @@
+ion-item {
+    @extend .item;
+    @extend .item-block;
+    @extend .item-#{$plt};
+}
+item-inner {
+    @extend .item-inner;
+}

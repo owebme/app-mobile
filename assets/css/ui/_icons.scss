@@ -1,0 +1,7 @@
+ion-icon {
+    [icon-left] &,
+    [icon-right] & {
+        line-height:1;
+        margin-top:-1px;
+    }
+}

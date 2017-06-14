@@ -1,0 +1,22 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons start if={ opts.buttons }>
+            <button ion-button icon-only>
+                <span><ion-icon name="contact"></ion-icon></span>
+            </button>
+        </ion-buttons>
+        <ion-toolbar-content>
+            <ion-title>
+                <ion-toolbar-title>{ opts.section }</ion-toolbar-title>
+            </ion-title>
+        </ion-toolbar-content>
+        <ion-buttons end if={ opts.buttons }>
+            <button ion-button icon-only>
+                <span><ion-icon name="search"></ion-icon></span>
+            </button>
+        </ion-buttons>
+        <toolbar-background></toolbar-background>
+    </ion-navbar>
+
+</ion-header>

@@ -1,0 +1,124 @@
+<ion-alert class="alert-{ plt }">
+
+    <ion-backdrop ref="backdrop" onClick={ hide } onUpdate="none"></ion-backdrop>
+
+    <alert-wrapper ref="wrapper">
+        <alert-head>
+            <alert-title>{ data.title }</alert-title>
+            <alert-sub-title if={ data.subtitle }>{ data.subtitle }</alert-sub-title>
+        </alert-head>
+        <alert-message if={ data.message }>{ data.message }</alert-message>
+        <alert-input-group if={ data.prompt }>
+            <input ref="input" class="alert-input" placeholder={ data.prompt && data.prompt.placeholder } type="text">
+        </alert-input-group>
+        <alert-radio-group if={ data.radio && !_.isEmpty(items) }>
+            <button onClick={ onRadioButton } each={ item in items } no-reorder class="alert-radio alert-radio-button-{ plt }" aria-checked={ item.checked }>
+                <span class="button-inner">
+                    <div class="alert-radio-icon">
+                        <div class="alert-radio-inner"></div>
+                    </div>
+                    <div class="alert-radio-label">{ item && item.title || item }</div>
+                </span>
+            </button>
+        </alert-radio-group>
+        <alert-checkbox-group if={ data.checkbox && !_.isEmpty(items) }>
+            <button onClick={ onCheckboxButton } each={ item in items } no-reorder class="alert-checkbox alert-checkbox-button-{ plt }" aria-checked={ item.checked }>
+                <span class="button-inner">
+                    <div class="alert-checkbox-icon">
+                        <div class="alert-checkbox-inner"></div>
+                    </div>
+                    <div class="alert-checkbox-label">{ item && item.title || item }</div>
+                </span>
+            </button>
+        </alert-checkbox-group>
+        <alert-button-group>
+            <button if={ data.cancel } onClick={ onCancel } onUpdate="none" class="alert-button alert-button-{ plt }">{ data.cancel && data.cancel.title ? data.cancel.title : $defaults.alert.cancel }</button>
+            <button onClick={ onSuccess } onUpdate="none" class="alert-button alert-button-{ plt }">{ data.success && data.success.title ? data.success.title : $defaults.alert.success }</button>
+        </alert-button-group>
+    </alert-wrapper>
+
+<script>
+
+    var $ = this;
+
+    $.default = function(){
+        return {
+            title: null,
+            subtitle: null
+        }
+    };
+
+    $.show = function(data){
+        if (data){
+            $.update({
+                data: _.extend($.default(), data),
+                items: data.radio && _.copyArray(data.radio.items) || data.checkbox && _.copyArray(data.checkbox.items) || null
+            })
+            Animation.alert.show($);
+        }
+    };
+
+    $.error = function(data){
+        Object.keys(data).forEach(function(key) {
+            $.data[key] = data[key];
+        });
+        $.update();
+    };
+
+    $.onSuccess = function(){
+        if ($.data.success && _.isFunction($.data.success.callback)){
+            $.data.success.callback();
+            $.hide();
+        }
+        else if ($.data.prompt && _.isFunction($.data.prompt.callback)){
+            if (_.isFunction($.data.prompt.should) && $.data.prompt.should($.refs.input.value) || !$.data.prompt.should && $.refs.input.value.length > 0){
+                $.data.prompt.callback(data.prompt && $.refs.input.value);
+                $.hide();
+            }
+        }
+        else if ($.data.radio && _.isFunction($.data.radio.callback) || $.data.checkbox && _.isFunction($.data.checkbox.callback)){
+            if ($.data.radio && (_.isFunction($.data.radio.should) && $.data.radio.should($.items) || !$.data.radio.should)){
+                $.data.radio.callback($.items);
+                $.hide();
+            }
+            else if ($.data.checkbox && (_.isFunction($.data.checkbox.should) && $.data.checkbox.should($.items) || !$.data.checkbox.should)){
+                $.data.checkbox.callback($.items);
+                $.hide();
+            }
+        }
+        else {
+            $.hide();
+        }
+    };
+
+    $.onCancel = function(){
+        if ($.data.cancel && _.isFunction($.data.cancel.callback)){
+            $.data.cancel.callback();
+        }
+        $.hide();
+    };
+
+    $.onRadioButton = function(){
+        if (this.item.checked){
+            this.item.checked = false;
+            return;
+        }
+        _.each($.items, function(item){
+            item.checked = false;
+        });
+        this.item.checked = true;
+    };
+
+    $.onCheckboxButton = function(){
+        this.item.checked = !this.item.checked;
+    };
+
+    $.hide = function(){
+        Animation.alert.hide($, $.data.afterHide && _.isFunction($.data.afterHide) && function(){
+            $.data.afterHide();
+        });
+    };
+
+</script>
+
+</ion-alert>

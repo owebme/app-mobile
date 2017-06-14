@@ -1,0 +1,162 @@
+@each $title, $size in (xxs: 5px, xss: 7.5px, xs: 10px, s: 15px, m: 20px, l: 40px, xl: 80px){
+    @media screen and (min-width: $w768) and (max-width: $w1024) {
+        .md-l-#{$title} {
+            left:$size;
+        }
+        .md-r-#{$title} {
+            right:$size;
+        }
+        .md-t-#{$title} {
+            top:$size;
+        }
+        .md-b-#{$title} {
+            bottom:$size;
+        }
+        .md-l--#{$title} {
+            left:-$size;
+        }
+        .md-r--#{$title} {
+            right:-$size;
+        }
+        .md-t--#{$title} {
+            top:-$size;
+        }
+        .md-b--#{$title} {
+            bottom:-$size;
+        }
+    }
+    @media screen and (min-width: $w768) and (max-width: $w991) {
+        .sm-l-#{$title} {
+            left:$size;
+        }
+        .sm-r-#{$title} {
+            right:$size;
+        }
+        .sm-t-#{$title} {
+            top:$size;
+        }
+        .sm-b-#{$title} {
+            bottom:$size;
+        }
+        .sm-l--#{$title} {
+            left:-$size;
+        }
+        .sm-r--#{$title} {
+            right:-$size;
+        }
+        .sm-t--#{$title} {
+            top:-$size;
+        }
+        .sm-b--#{$title} {
+            bottom:-$size;
+        }
+    }
+    @media screen and (max-width: $w991) {
+        .xsm-l-#{$title} {
+            left:$size;
+        }
+        .xsm-r-#{$title} {
+            right:$size;
+        }
+        .xsm-t-#{$title} {
+            top:$size;
+        }
+        .xsm-b-#{$title} {
+            bottom:$size;
+        }
+        .xsm-l--#{$title} {
+            left:-$size;
+        }
+        .xsm-r--#{$title} {
+            right:-$size;
+        }
+        .xsm-t--#{$title} {
+            top:-$size;
+        }
+        .xsm-b--#{$title} {
+            bottom:-$size;
+        }
+    }
+    @media screen and (max-width: $w767) {
+        .xs-l-#{$title} {
+            left:$size;
+        }
+        .xs-r-#{$title} {
+            right:$size;
+        }
+        .xs-t-#{$title} {
+            top:$size;
+        }
+        .xs-b-#{$title} {
+            bottom:$size;
+        }
+        .xs-l--#{$title} {
+            left:-$size;
+        }
+        .xs-r--#{$title} {
+            right:-$size;
+        }
+        .xs-t--#{$title} {
+            top:-$size;
+        }
+        .xs-b--#{$title} {
+            bottom:-$size;
+        }
+    }
+}
+@media screen and (min-width: $w768) and (max-width: $w1024) {
+    .md-t0 {
+        top:0;
+    }
+    .md-r0 {
+        right:0;
+    }
+    .md-b0 {
+        bottom:0;
+    }
+    .md-l0 {
+        left:0;
+    }
+}
+@media screen and (min-width: $w768) and (max-width: $w991) {
+    .sm-t0 {
+        top:0;
+    }
+    .sm-r0 {
+        right:0;
+    }
+    .sm-b0 {
+        bottom:0;
+    }
+    .sm-l0 {
+        left:0;
+    }
+}
+@media screen and (max-width: $w991) {
+    .xsm-t0 {
+        top:0;
+    }
+    .xsm-r0 {
+        right:0;
+    }
+    .xsm-b0 {
+        bottom:0;
+    }
+    .xsm-l0 {
+        left:0;
+    }
+}
+@media screen and (max-width: $w767) {
+    .xs-t0 {
+        top:0;
+    }
+    .xs-r0 {
+        right:0;
+    }
+    .xs-b0 {
+        bottom:0;
+    }
+    .xs-l0 {
+        left:0;
+    }
+}

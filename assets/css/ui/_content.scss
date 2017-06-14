@@ -1,0 +1,25 @@
+ion-content {
+    @extend .content-#{$plt};
+
+    ion-nav & {
+        @extend .statusbar-padding;
+    }
+    &[fixed]:before {
+        @extend .display-block;
+        @extend .content-empty;
+        @extend .fixed-content;
+        margin-top:$toolbar-ios-height;
+
+        ion-nav & {
+            margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
+        }
+    }
+}
+scroll-content {
+    @extend .scroll-content;
+    margin-top:$toolbar-ios-height;
+
+    ion-nav & {
+        margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
+    }
+}

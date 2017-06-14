@@ -1,0 +1,62 @@
+// iOS
+$alert-ios-max-width: 320px;
+$alert-ios-content-max-height: 270px;
+$alert-ios-head-padding-top: 15px;
+$alert-ios-head-padding-bottom: 18px;
+$alert-ios-title-font-size: 21px;
+$alert-ios-sub-title-font-size: 15px;
+$alert-ios-message-font-size: 14px;
+$alert-ios-input-padding-top: 8px;
+$alert-ios-button-min-height: 53px;
+$alert-ios-button-font-size: 18px;
+$alert-ios-radio-label-padding-top: 15px;
+$alert-ios-radio-label-padding-bottom: 9px;
+$alert-ios-radio-icon-width: 11px;
+$alert-ios-radio-icon-height: 17px;
+$alert-ios-radio-icon-top: -9px;
+$alert-ios-radio-icon-left: 0px;
+$alert-ios-checkbox-icon-top: 3px;
+$alert-ios-checkbox-size: 22px;
+$alert-ios-checkbox-icon-width: 7px;
+$alert-ios-checkbox-icon-height: 12px;
+
+ion-alert {
+    @extend .display-none;
+    @include perspective();
+
+    &[show]{
+        @extend .display-flex;
+    }
+    &.alert-ios {
+        alert-radio-group,
+        alert-checkbox-group {
+            padding:5px 0 10px;
+        }
+    }
+}
+.alert-#{$plt} {
+    .alert-button {
+        &:active {
+             @extend .alert-button.activated;
+        }
+    }
+}
+@each $title in (wrapper, head, title, sub-title, message, input-group, radio-group, checkbox-group, button-group){
+    alert-#{$title} {
+        @extend .alert-#{$title};
+    }
+}
+alert-title,
+alert-sub-title,
+alert-message {
+    @extend .display-block;
+}
+alert-wrapper {
+    @include accelerate();
+    @extend .willChange-tp;
+    min-width:300px;
+}
+.alert-radio,
+.alert-checkbox {
+    @extend .alert-tappable;
+}

@@ -1,0 +1,32 @@
+@each $title, $color in (primary: $primary, black: $black, blackLight: $blackLight, white: $white, gray: $gray, grayDark: $grayDark, smoke: $smoke, smokeDark: $smokeDark, snow: $snow, snow458: $snow458, snowDark: $snowDark, green: $green, red: $red){
+    .bg-#{$title},
+    .text-strike[data-color=#{$title}]:after {
+        background-color:$color;
+    }
+    .bg-#{$title}-transparent {
+        background-color:rgba($color,.1);
+    }
+    .c-#{$title} {
+        color:$color;
+    }
+    .fill-#{$title} {
+        fill:$color;
+    }
+    .borderColor-#{$title} {
+        border-color:$color;
+    }
+    .borderColor-#{$title}-transparent {
+        border-color:rgba($color,.1);
+    }
+    .boxShadow-#{$title} {
+        box-shadow:0 0 0 1px $color;
+    }
+    .boxShadowInset-#{$title} {
+        box-shadow:inset 0 0 0 1px $color;
+    }
+    svg[fill-color="#{$title}"]{
+        path, rect, polygon, circle {
+            fill:$color;
+        }
+    }
+}

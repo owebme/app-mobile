@@ -1,0 +1,4 @@
+ion-list {
+    @extend .display-block;
+    @extend .list-#{$plt};
+}

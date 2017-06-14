@@ -1,0 +1,23 @@
+.progressive-image {
+    &,
+    &:before,
+    &:after {
+        background-image:none !important;
+    }
+}
+.bg-none {
+	background:none;
+}
+.bg-cover {
+	background-position:top center;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.bg-cover-center {
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.bg-image-none {
+    background-image:none;
+}
