@@ -1,0 +1,85 @@
+<social-card class="ion-page">
+
+    <ion-header section="Background Images"></ion-header>
+
+    <ion-content fixed cards-bg>
+        <scroll-content>
+
+            <ion-card each={ item in items } no-reorder>
+                  <ion-item>
+                    <ion-avatar item-start>
+                      <img src="{ item.avatar }">
+                    </ion-avatar>
+                    <item-inner>
+                        <input-wrapper>
+                        <ion-label>
+                            <h2>{ item.title }</h2>
+                            <p>{ item.date }</p>
+                      </ion-label>
+                      </input-wrapper>
+                  </item-inner>
+                  </ion-item>
+
+                  <img src="{ item.image }">
+
+                  <ion-card-content>
+                    <p>{ item.text }</p>
+                  </ion-card-content>
+
+                  <ion-row>
+                    <ion-col>
+                      <button ion-button icon-left clear small>
+                        <span>
+                        <ion-icon name="thumbs-up"></ion-icon>
+                        12 Likes
+                        </span>
+                      </button>
+                    </ion-col>
+                    <ion-col>
+                      <button ion-button icon-left clear small>
+                        <span>
+                        <ion-icon name="text"></ion-icon>
+                        4 Comments
+                        </span>
+                      </button>
+                    </ion-col>
+                    <ion-col center text-center>
+                      <ion-note>
+                        11h ago
+                      </ion-note>
+                    </ion-col>
+                  </ion-row>
+            </ion-card>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.items = [
+        {
+            avatar: "/assets/img/marty-avatar.png",
+            image: "/assets/img/advance-card-bttf.png",
+            title: "Marty McFly",
+            date: "November 5, 1955",
+            text: "Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy."
+        },
+        {
+            avatar: "/assets/img/sarah-avatar.png",
+            image: "/assets/img/advance-card-tmntr.jpg",
+            title: "Sarah Connor",
+            date: "May 12, 1984",
+            text: "I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too."
+        },
+        {
+            avatar: "/assets/img/ian-avatar.png",
+            image: "/assets/img/advance-card-jp.jpg",
+            title: "Dr. Ian Malcolm",
+            date: "June 28, 1990",
+            text: "Your scientists were so preoccupied with whether or not they could, that they didn't stop to think if they should."
+        }
+    ];
+
+</script>
+
+</social-card>

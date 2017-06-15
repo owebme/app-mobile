@@ -2,10 +2,36 @@ ion-card {
     @extend .card;
     @extend .card-#{$plt};
 
+    &-header {
+        @extend .card-header-#{$plt};
+    }
     &-content {
         @extend .card-content-#{$plt};
     }
     &-title {
         @extend .card-title-#{$plt};
+    }
+}
+ion-note {
+    @extend .note-#{$plt};
+}
+.card-background-page {
+    ion-card {
+        position: relative;
+        text-align: center;
+
+        &:before {
+            @extend .content-empty;
+            @include abs();
+            @extend .bg-overlay;
+            @extend .opacity-50;
+        }
+    }
+    .card-title {
+        font-size: 2.0em;
+        font-weight: bold;
+    }
+    .card-subtitle {
+        font-size: 1.0em;
     }
 }

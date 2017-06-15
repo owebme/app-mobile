@@ -1,0 +1,76 @@
+<card-images class="ion-page">
+
+    <ion-header section="Card Images"></ion-header>
+
+    <ion-content fixed cards-bg>
+        <scroll-content>
+
+            <ion-card each={ item in items } no-reorder>
+                <img src="{ item.image }"/>
+                <ion-card-content>
+                    <ion-card-title>
+                        { item.title }
+                    </ion-card-title>
+                    <p>
+                        { item.text }
+                    </p>
+                </ion-card-content>
+                <ion-row no-padding>
+                    <ion-col>
+                        <button clear color="danger" icon-left ion-button small>
+                            <span>
+                                <ion-icon name="star"></ion-icon>
+                                Favorite
+                            </span>
+                        </button>
+                    </ion-col>
+                    <ion-col text-center>
+                        <button clear color="danger" icon-left ion-button small>
+                            <span>
+                                <ion-icon name="musical-notes"></ion-icon>
+                                Listen
+                            </span>
+                        </button>
+                    </ion-col>
+                    <ion-col text-right>
+                        <button clear color="danger" icon-left ion-button small>
+                            <span>
+                                <ion-icon name="share-alt"></ion-icon>
+                                Share
+                            </span>
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.items = [
+        {
+            image: "/assets/img/nin-live.png",
+            title: "Nine Inch Nails Live",
+            text: "The most popular industrial group ever, and largely responsible for bringing the music to a mass audience."
+        },
+        {
+            image: "/assets/img/badu-live.png",
+            title: "Erykah Badu",
+            text: "American singer-songwriter, record producer, activist, and actress, Badu's style is a prime example of neo-soul."
+        },
+        {
+            image: "/assets/img/queen-live.png",
+            title: "Queen",
+            text: "The British rock band formed in London in 1970, and is considered one of the biggest stadium rock bands in the world."
+        },
+        {
+            image: "/assets/img/rundmc-live.png",
+            title: "Run-D.M.C.",
+            text: "The American hip hop group widely acknowledged as one of the most influential acts in the history of hip hop."
+        }   
+    ];
+
+</script>
+
+</card-images>

@@ -4,12 +4,13 @@
         <ion-statusbar></ion-statusbar>
 
         <ion-nav>
-            <alert-prompt></alert-prompt>
+            <social-card></social-card>
         </ion-nav>
 
     </app-root>
 
     <ion-alert></ion-alert>
+    <ion-action-sheet></ion-action-sheet>
 
 <script>
 
@@ -18,6 +19,7 @@
     this.on("mount", function(){
 
         $Alert = $root.tags["ion-alert"];
+        $ActionSheet = $root.tags["ion-action-sheet"];
 
     });
 

@@ -5,5 +5,8 @@ var $defaults = {
         cancel: "Cancel",
         success: "OK",
         propTitle: "title"
+    },
+    actionSheet: {
+        cancel: "Cancel"
     }
 }

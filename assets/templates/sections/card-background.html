@@ -1,0 +1,46 @@
+<card-background class="ion-page">
+
+    <ion-header section="Background Images"></ion-header>
+
+    <ion-content fixed class="card-background-page">
+        <scroll-content>
+
+            <ion-card each={ item in items } no-reorder>
+                <img src="{ item.image }"/>
+                <div class="pos-centered w90p c-white">
+                    <div class="card-title">{ item.title }</div>
+                    <div class="card-subtitle">{ item.text }</div>
+                </div>
+            </ion-card>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.items = [
+        {
+            image: "/assets/img/card-saopaolo.png",
+            title: "São Paulo",
+            text: "41 Listings"
+        },
+        {
+            image: "/assets/img/card-amsterdam.png",
+            title: "Amsterdam",
+            text: "64 Listings"
+        },
+        {
+            image: "/assets/img/card-sf.png",
+            title: "San Francisco",
+            text: "72 Listings"
+        },
+        {
+            image: "/assets/img/card-madison.png",
+            title: "Madison",
+            text: "28 Listings"
+        }
+    ];
+
+</script>
+
+</card-background>

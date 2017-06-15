@@ -17,6 +17,20 @@
         transform:translate3d(0, 0, 0) scale(($i * 5) / 100);
     }
 }
+@for $i from 1 through 20 {
+    .trY-#{$i * 5} {
+        transform:translateY($i * 5px) translateZ(0);
+    }
+    .trX-#{$i * 5} {
+        transform:translateX($i * 5px) translateZ(0);
+    }
+    .trY-#{$i * 5}p {
+        transform:translateY($i * 5%) translateZ(0);
+    }
+    .trX-#{$i * 5}p {
+        transform:translateX($i * 5%) translateZ(0);
+    }
+}
 .scale3d-100 {
     transform:translate3d(0, 0, 0) scale3d(1, 1, 1);
 }

@@ -1,0 +1,10 @@
+ion-row {
+    @extend .row;
+}
+ion-col {
+    @extend .col;
+
+    &[center]{
+        @extend [align-self-center];
+    }
+}

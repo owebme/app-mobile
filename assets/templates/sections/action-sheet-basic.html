@@ -1,0 +1,51 @@
+<action-sheet-basic class="ion-page">
+
+    <ion-header section="Action Sheets"></ion-header>
+
+    <ion-content padding fixed>
+        <scroll-content>
+
+            <button onClick={ onActionSheet } ion-button block>
+                <span>Show Action Sheet</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onActionSheet = function(){
+        $ActionSheet.show({
+            title: "Albums",
+            items: [{
+                title: "Delete",
+                color: "red",
+                callback: function(){
+                    console.log("Delete");
+                },
+            },
+            {
+                title: "Share",
+                callback: function(){
+                    console.log("Share");
+                },
+            },
+            {
+                title: "Play",
+                callback: function(){
+                    console.log("Play");
+                },
+            },
+            {
+                title: "Favorite",
+                callback: function(){
+                    console.log("Favorite");
+                }
+            }],
+            cancel: true
+        });
+    };
+
+</script>
+
+</action-sheet-basic>

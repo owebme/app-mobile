@@ -201,7 +201,9 @@
     }
 
     let functions = {
-      linear: bezier(0.250, 0.250, 0.750, 0.750)
+      linear: bezier(0.250, 0.250, 0.750, 0.750),
+      cubic360: bezier(0.360, 0.660, 0.040, 1.000),
+      cubic005: bezier(0.000, 0.000, 0.050, 1.000)
     }
 
     for (let type in equations) {

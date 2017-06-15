@@ -17,30 +17,29 @@ ion-toolbar-title {
     @extend .toolbar-title;
     @extend .toolbar-title-#{$plt};
 }
-.#{$plt} {
-    ion-buttons {
-        @extend .bar-buttons-#{$plt};
+ion-buttons {
+    @extend .bar-buttons-#{$plt};
 
-        button[ion-button] {
-            @extend .bar-button;
-            @extend .bar-button-#{$plt};
-            @extend .bar-button-default;
-            @extend .bar-button-default-#{$plt};
+    button[ion-button] {
+        @extend .bar-button;
+        @extend .bar-button-#{$plt};
+        @extend .bar-button-#{$plt}-clear;
+        @extend .bar-button-clear-#{$plt};
+        @extend .bar-button-clear-#{$plt}-clear;
+        @extend .bar-button-clear-#{$plt}-default;
+        @extend .boxShadow-none;
+
+        &:active {
             @extend .bar-button-clear-#{$plt};
-            @extend .bar-button-clear-#{$plt}-clear;
-            @extend .bar-button-clear-#{$plt}-default;
-
-            &:active {
-                @extend .bar-button-clear-#{$plt};
-            }
+            @extend .boxShadow-none;
         }
     }
-}
-ion-buttons {
-    &[start]{
-        @include margin(0, .2rem, 0, .65rem);
-    }
-    &[end]{
-        @include margin(0, .65rem, 0, .2rem);
+    .ios & {
+        &[start]{
+            @include margin(0, .2rem, 0, .65rem);
+        }
+        &[end]{
+            @include margin(0, .65rem, 0, .2rem);
+        }
     }
 }

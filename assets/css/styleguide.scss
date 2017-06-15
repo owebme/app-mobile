@@ -2,15 +2,16 @@
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/main';
+@import 'base/app';
 @import 'base/mixins';
 
 // theme
 @import 'themes/ionic.build.default';
 
 // UI elements
-@import 'ui/app';
 @import 'ui/statusbar';
 @import 'ui/alert';
+@import 'ui/actionSheet';
 @import 'ui/button';
 @import 'ui/backdrop';
 @import 'ui/page';
@@ -23,11 +24,12 @@
 @import 'ui/label';
 @import 'ui/list';
 @import 'ui/badge';
+@import 'ui/grid';
 @import 'ui/typography';
 @import 'ui/icons';
 @import 'ui/icons.logo';
 @import 'ui/icons.ios';
-@import 'ui/icons.md';
+// @import 'ui/icons.md';
 @import "themes/ionic.components.ios";
 
 // states
@@ -41,6 +43,8 @@
 @import 'states/text';
 @import 'states/padding';
 @import 'states/margin';
+@import 'states/fontSize';
+@import 'states/lineHeight';
 @import 'states/fontWeight';
 @import 'states/letterSpacing';
 @import 'states/border';

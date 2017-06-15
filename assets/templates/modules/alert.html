@@ -15,23 +15,21 @@
             <button onClick={ onRadioButton } each={ item in items } no-reorder ion-radio-button aria-checked={ item.checked }>
                 <span>
                     <alert-radio-icon></alert-radio-icon>
-                    <alert-radio-label>{ item && item.title || item }</alert-radio-label>
+                    <alert-radio-label>{ item && item[propTitle] || item }</alert-radio-label>
                 </span>
             </button>
         </alert-radio-group>
         <alert-checkbox-group if={ data.checkbox && !_.isEmpty(items) }>
-            <button onClick={ onCheckboxButton } each={ item in items } no-reorder class="alert-checkbox alert-checkbox-button-{ plt }" aria-checked={ item.checked }>
-                <span class="button-inner">
-                    <div class="alert-checkbox-icon">
-                        <div class="alert-checkbox-inner"></div>
-                    </div>
-                    <div class="alert-checkbox-label">{ item && item[propTitle] || item }</div>
+            <button onClick={ onCheckboxButton } each={ item in items } no-reorder ion-checkbox-button aria-checked={ item.checked }>
+                <span>
+                    <alert-checkbox-icon></alert-checkbox-icon>
+                    <alert-checkbox-label>{ item && item[propTitle] || item }</alert-checkbox-label>
                 </span>
             </button>
         </alert-checkbox-group>
         <alert-button-group>
-            <button if={ data.cancel } onClick={ onCancel } onUpdate="none" class="alert-button alert-button-{ plt }">{ data.cancel && data.cancel.title ? data.cancel.title : $defaults.alert.cancel }</button>
-            <button onClick={ onSuccess } onUpdate="none" class="alert-button alert-button-{ plt }">{ data.success && data.success.title ? data.success.title : $defaults.alert.success }</button>
+            <button if={ data.cancel } onClick={ onCancel } onUpdate="none" ion-alert-button>{ data.cancel && data.cancel.title ? data.cancel.title : $defaults.alert.cancel }</button>
+            <button onClick={ onSuccess } onUpdate="none" ion-alert-button>{ data.success && data.success.title ? data.success.title : $defaults.alert.success }</button>
         </alert-button-group>
     </alert-wrapper>
 
@@ -53,7 +51,7 @@
                 propTitle: (data.radio && data.radio.propTitle || data.checkbox && data.checkbox.propTitle) || $defaults.alert.propTitle,
                 items: data.radio && _.copyArray(data.radio.items) || data.checkbox && _.copyArray(data.checkbox.items) || null
             })
-            Animation.alert.show($);
+            Animation.Alert.show($);
         }
     };
 
@@ -113,7 +111,7 @@
     };
 
     $.hide = function(){
-        Animation.alert.hide($, $.data.afterHide && _.isFunction($.data.afterHide) && function(){
+        Animation.Alert.hide($, $.data.afterHide && _.isFunction($.data.afterHide) && function(){
             $.data.afterHide();
         });
     };

@@ -1,6 +1,16 @@
 [nohover]{
     @extend .disable-hover;
 }
+button[ion-item] {
+    @extend .item;
+    @extend .item-#{$plt};
+    @extend .item-block;
+    @extend .transition-default;
+
+    &:active {
+        @extend .activated;
+    }
+}
 button[ion-button] {
     @extend .button;
     @extend .button-#{$plt};
@@ -15,7 +25,7 @@ button[ion-button] {
     }
     &[item-button] {
         @extend .item-button;
-    }    
+    }
     &[block]{
         @extend .button-block;
         @extend .button-block-#{$plt};

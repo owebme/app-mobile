@@ -8,6 +8,25 @@ ion-content {
         @extend .display-block;
         @extend .content-empty;
         @extend .fixed-content;
+    }
+    &[cards-bg]{
+        @extend .bg-snow447;
+    }
+}
+scroll-content {
+    @extend .scroll-content;
+}
+@if $plt == "ios" {
+    ion-content {
+        &[fixed]:before {
+            margin-top:$toolbar-ios-height;
+
+            ion-nav & {
+                margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
+            }
+        }
+    }
+    scroll-content {
         margin-top:$toolbar-ios-height;
 
         ion-nav & {
@@ -15,11 +34,39 @@ ion-content {
         }
     }
 }
-scroll-content {
-    @extend .scroll-content;
-    margin-top:$toolbar-ios-height;
+@if $plt == "md" {
+    ion-content {
+        &[fixed]:before {
+            margin-top:$toolbar-md-height;
 
-    ion-nav & {
-        margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
+            ion-nav & {
+                margin-top:$toolbar-md-height + $cordova-md-statusbar-padding;
+            }
+        }
+    }
+    scroll-content {
+        margin-top:$toolbar-md-height;
+
+        ion-nav & {
+            margin-top:$toolbar-md-height + $cordova-md-statusbar-padding;
+        }
+    }
+}
+@if $plt == "wp" {
+    ion-content {
+        &[fixed]:before {
+            margin-top:$toolbar-wp-height;
+
+            ion-nav & {
+                margin-top:$toolbar-wp-height + $cordova-wp-statusbar-padding;
+            }
+        }
+    }
+    scroll-content {
+        margin-top:$toolbar-wp-height;
+
+        ion-nav & {
+            margin-top:$toolbar-wp-height + $cordova-wp-statusbar-padding;
+        }
     }
 }

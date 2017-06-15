@@ -1,4 +1,4 @@
-@each $title, $color in (primary: $primary, black: $black, blackLight: $blackLight, white: $white, gray: $gray, grayDark: $grayDark, smoke: $smoke, smokeDark: $smokeDark, snow: $snow, snow458: $snow458, snowDark: $snowDark, green: $green, red: $red){
+@each $title, $color in (blue: $blue, blueLight: $blueLight, black: $black, blackLight: $blackLight, white: $white, gray: $gray, grayDark: $grayDark, smoke: $smoke, smokeDark: $smokeDark, snow: $snow, snow458: $snow458, snow447: $snow447, snowDark: $snowDark, green: $green, red: $red){
     .bg-#{$title},
     .text-strike[data-color=#{$title}]:after {
         background-color:$color;
@@ -29,4 +29,22 @@
             fill:$color;
         }
     }
+}
+.bg-overlay {
+    background-color:rgba(40,47,51,.76);
+}
+.bg-overlay-dark {
+    background:radial-gradient(rgba(64,64,75,.9), rgba(17,17,24,.9)) rgba(34,34,40,.52);
+}
+.bg-gradient-tb-white {
+	background:linear-gradient(to bottom, #fff, rgba(#fff,0));
+}
+.bg-gradient-bt-white {
+	background:linear-gradient(to top, #fff, rgba(#fff,0));
+}
+.bg-gradient-lr-white {
+	background:linear-gradient(to right, #fff, rgba(#fff,0));
+}
+.bg-gradient-rl-white {
+	background:linear-gradient(to left, #fff, rgba(#fff,0));
 }

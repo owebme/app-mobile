@@ -1,24 +1,24 @@
 'use strict';
 
-app.define("Animation.Alert");
+app.define("Animation.ActionSheet");
 
-Animation.Alert = {
+Animation.ActionSheet = {
     backdrop: {
         opacity: {
-            ios: 0.3,
-            md: 0.5,
-            wp: 0.5
+            ios: 0.4,
+            md: 0.26,
+            wp: 0.16
         },
-        scale: {
+        duration: {
             in: {
-                ios: 1.1,
-                md: 1.1,
-                wp: 1.3
+                ios: 400,
+                md: 400,
+                wp: 400
             },
             out: {
-                ios: 0.9,
-                md: 0.9,
-                wp: 1.3
+                ios: 300,
+                md: 450,
+                wp: 450
             }
         }
     },
@@ -32,17 +32,16 @@ Animation.Alert = {
         }).add({
             targets: $.refs.backdrop,
             opacity: [0.01, this.backdrop.opacity[plt]],
-            easing: plt === "wp" ? 'cubic005' : 'easeInOutEase',
-            duration: 200,
+            easing: 'cubic360',
+            duration: this.backdrop.duration.in[plt],
             offset: 0
         })
         .add({
             targets: $.refs.wrapper,
-            opacity: [0.01, 1],
-            scale: [this.backdrop.scale.in[plt], 1],
+            translateY: ["100%", "0%"],
             translateZ: 0,
-            easing: plt === "wp" ? 'cubic005' : 'easeInOutEase',
-            duration: 200,
+            easing: 'cubic360',
+            duration: this.backdrop.duration.out[plt],
             offset: 0
         });
     },
@@ -56,17 +55,16 @@ Animation.Alert = {
         .add({
             targets: $.refs.backdrop,
             opacity: [this.backdrop.opacity[plt], 0],
-            duration: plt === "wp" ? 150 : 200,
-            easing: plt === "wp" ? 'easeOutEase' : 'easeInOutEase',
+            duration: this.backdrop.duration.in[plt],
+            easing: 'cubic360',
             offset: 0
         })
         .add({
             targets: $.refs.wrapper,
-            opacity: [0.99, 0],
-            scale: [1, this.backdrop.scale.out[plt]],
+            translateY: ["0%", "100%"],
             translateZ: 0,
-            duration: plt === "wp" ? 150 : 200,
-            easing: plt === "wp" ? 'easeOutEase' : 'easeInOutEase',
+            duration: this.backdrop.duration.out[plt],
+            easing: 'cubic360',
             offset: 0
         });
     }

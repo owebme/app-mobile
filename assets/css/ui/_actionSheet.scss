@@ -1,0 +1,34 @@
+ion-action-sheet {
+    @extend .display-none;
+    @extend .action-sheet-#{$plt};
+
+    &[show]{
+        @extend .display-block;
+    }
+}
+@each $title in (wrapper, container, group, title){
+    action-sheet-#{$title} {
+        @extend .display-block;
+        @extend .action-sheet-#{$title};
+    }
+}
+action-sheet-wrapper {
+    @extend .willChange-transform;
+    @extend .trY-100p;
+}
+button[ion-action-sheet-button]{
+    @extend .action-sheet-button;
+
+    &.c-red {
+        @extend .c-red;
+    }
+    &.c-green {
+        @extend .c-green;
+    }
+    &[cancel]{
+        @extend .action-sheet-cancel;
+    }
+    span {
+        @extend .button-inner;
+    }
+}

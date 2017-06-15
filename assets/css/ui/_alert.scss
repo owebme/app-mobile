@@ -1,27 +1,3 @@
-// iOS
-$alert-ios-max-width: 320px;
-$alert-ios-content-max-height: 270px;
-$alert-ios-head-padding-top: 15px;
-$alert-ios-head-padding-bottom: 18px;
-$alert-ios-title-font-size: 20px;
-$alert-ios-sub-title-font-size: 15px;
-$alert-ios-message-font-size: 14px;
-$alert-ios-input-padding-start: 10px;
-$alert-ios-input-padding-end: 10px;
-$alert-ios-input-padding-top: 8px;
-$alert-ios-button-min-height: 53px;
-$alert-ios-button-font-size: 18px;
-$alert-ios-radio-label-padding-start: 18px;
-$alert-ios-radio-icon-width: 11px;
-$alert-ios-radio-icon-height: 17px;
-$alert-ios-radio-icon-top: -12px;
-$alert-ios-radio-icon-left: 0px;
-$alert-ios-checkbox-icon-top: 4px;
-$alert-ios-checkbox-icon-left: 8px;
-$alert-ios-checkbox-size: 24px;
-$alert-ios-checkbox-icon-width: 7px;
-$alert-ios-checkbox-icon-height: 12px;
-
 ion-alert {
     @extend .display-none;
     @include perspective();
@@ -37,6 +13,16 @@ button[ion-radio-button] {
     span {
         @extend .button-inner;
     }
+}
+button[ion-checkbox-button] {
+    @extend .alert-checkbox;
+
+    span {
+        @extend .button-inner;
+    }
+}
+button[ion-alert-button] {
+    @extend .alert-button;
 }
 alert-radio-group,
 alert-checkbox-group {
@@ -63,18 +49,22 @@ alert-checkbox-group {
         }
     }
 }
-@each $title in (wrapper, head, title, sub-title, message, input-group, radio-group, checkbox-group, button-group, radio-icon, radio-label){
+@each $title in (wrapper, head, title, sub-title, message, input-group, radio-group, checkbox-group, button-group, radio-icon, radio-label, checkbox-icon, checkbox-label){
     alert-#{$title} {
         @extend .alert-#{$title};
     }
 }
 alert-title,
 alert-sub-title,
-alert-message {
+alert-message,
+alert-radio-icon,
+alert-checkbox-icon {
     @extend .display-block;
 }
-alert-message {
-    @extend .mt--9;
+.alert-ios {
+    alert-message {
+        @extend .mt--9;
+    }
 }
 alert-wrapper {
     @include accelerate();
@@ -85,6 +75,11 @@ alert-radio-icon:after {
     @extend .display-block;
     @extend .content-empty;
     @extend .alert-radio-inner;
+}
+alert-checkbox-icon:after {
+    @extend .display-block;
+    @extend .content-empty;
+    @extend .alert-checkbox-inner;
 }
 .alert-radio,
 .alert-checkbox {

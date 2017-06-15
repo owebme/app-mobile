@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
+var uncss = require('gulp-uncss');
 var combiner = require('stream-combiner2').obj;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -34,14 +35,37 @@ gulp.task('styleguide', function() {
 	}));
 });
 
+gulp.task('uncss', function () {
+	return combiner(
+    	gulp.src('assets/css/styleguide.css'),
+        uncss({
+            html: ['assets/templates/modules/alert.html']
+        }),
+		csso(),
+		autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}),
+        base64({
+            baseDir: './',
+            extensions: ['svg', 'png', 'jpg'],
+            maxImageSize: 16*1024, // bytes
+            debug: false
+        }),
+		rename('alert.min.css'),
+        gulp.dest('assets/css')
+	).on('error', notify.onError({
+		"sound": false,
+	}));
+});
+
 gulp.task('babel', function() {
 	return combiner(
 		gulp.src('assets/js/components/commons/ionic/animation.js'),
 		babel({
             presets: ['es2015']
         }),
-		gulp.dest('assets/js/components/commons/ionic/dist'),
-		browserSync.stream()
+		gulp.dest('assets/js/components/commons/ionic/dist')
 	).on('error', notify.onError({
 		"sound": false,
 	}));
