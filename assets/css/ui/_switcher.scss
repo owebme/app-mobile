@@ -1,0 +1,14 @@
+ui-switcher {
+    @extend .cursor-pointer;
+    @extend .toggle-#{$plt};
+
+    &[checked]{
+        @extend .toggle-checked;
+    }
+}
+switcher-icon {
+    @extend .toggle-icon;
+}
+switcher-inner {
+    @extend .toggle-inner;
+}

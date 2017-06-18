@@ -47,10 +47,11 @@
 	app.prefixed = {
 		'transform': Modernizr.prefixed('transform'),
 		'transform-origin': Modernizr.prefixed('transformOrigin'),
+		'transition': Modernizr.prefixed('transition'),
 		'transition-duration': Modernizr.prefixed('transitionDuration')
 	};
 
-	$$ = window.jQuery;
+	$$ = window.jQuery || window.Zepto;
 
 	if (window.moment) moment.locale('ru');
 

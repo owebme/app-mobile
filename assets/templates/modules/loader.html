@@ -1,0 +1,81 @@
+<ion-loading class="loading-{ plt }">
+
+    <ion-backdrop ref="backdrop"></ion-backdrop>
+
+    <loading-wrapper ref="wrapper">
+        <loading-spinner>
+            <ion-spinner if={ plt === "ios" } class="spinner-{ plt }">
+                <svg viewBox="0 0 64 64" style="transform: rotate(180deg); animation-delay: -1000ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(210deg); animation-delay: -916.667ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(240deg); animation-delay: -833.333ms; animation-duration: 1000ms;">
+                <line transform="translate(32,32)" y1="17" y2="29"></line>
+                </svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(270deg); animation-delay: -750ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(300deg); animation-delay: -666.667ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(330deg); animation-delay: -583.333ms; animation-duration: 1000ms;">
+                <line transform="translate(32,32)" y1="17" y2="29"></line>
+                </svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(0deg); animation-delay: -500ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(30deg); animation-delay: -416.667ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(60deg); animation-delay: -333.333ms; animation-duration: 1000ms;">
+                <line transform="translate(32,32)" y1="17" y2="29"></line>
+                </svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(90deg); animation-delay: -250ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(120deg); animation-delay: -166.667ms; animation-duration: 1000ms;"><line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+                <svg viewBox="0 0 64 64" style="transform: rotate(150deg); animation-delay: -83.3333ms; animation-duration: 1000ms;">
+                <line transform="translate(32,32)" y1="17" y2="29"></line></svg>
+            </ion-spinner>
+            <ion-spinner if={ plt === "md" } class="spinner-{ plt } spinner-crescent spinner-{ plt }-crescent">
+                <svg viewBox="0 0 64 64" style="animation-duration: 750ms;">
+                    <circle transform="translate(32,32)" r="26"></circle>
+                </svg>
+            </ion-spinner>
+            <ion-spinner if={ plt === "wp" } class="spinner-{ plt } spinner-circles spinner-{ plt }-circles">
+                <svg viewBox="0 0 64 64" style="top: 0px; left: 9px; animation-delay: -1000ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg><svg viewBox="0 0 64 64" style="top: 6.36396px; left: 6.36396px; animation-delay: -875ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg>
+                <svg
+                    viewBox="0 0 64 64" style="top: 9px; left: 5.51091e-16px; animation-delay: -750ms; animation-duration: 1000ms;">
+                    <circle transform="translate(32,32)" r="5"></circle>
+                    </svg><svg viewBox="0 0 64 64" style="top: 6.36396px; left: -6.36396px; animation-delay: -625ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg><svg viewBox="0 0 64 64" style="top: 1.10218e-15px; left: -9px; animation-delay: -500ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg>
+                    <svg
+                        viewBox="0 0 64 64" style="top: -6.36396px; left: -6.36396px; animation-delay: -375ms; animation-duration: 1000ms;">
+                        <circle transform="translate(32,32)" r="5"></circle>
+                        </svg><svg viewBox="0 0 64 64" style="top: -9px; left: -1.65327e-15px; animation-delay: -250ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg><svg viewBox="0 0 64 64" style="top: -6.36396px; left: 6.36396px; animation-delay: -125ms; animation-duration: 1000ms;"><circle transform="translate(32,32)" r="5"></circle></svg>
+            </ion-spinner>
+        </loading-spinner>
+        <loading-content>{ title || $defaults.loader.title }</loading-content>
+    </loading-wrapper>
+
+<script>
+
+    var $ = this;
+
+    $.show = function(title){
+        if ($.active) return;
+
+        $.active = true;
+
+        if (title || $.title){
+            $.update({
+                title: title
+            })
+        }
+
+        Animation.Loader.show($, function(){
+            $.resolve();
+        });
+
+        return new Promise(function(resolve){
+            $.resolve = resolve;
+        });
+    };
+
+    $.hide = function(){
+        if (!$.active) return;
+
+        Animation.Loader.hide($);
+        $.active = false;
+    };
+
+</script>
+
+</ion-loading>

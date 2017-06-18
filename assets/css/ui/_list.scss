@@ -1,4 +1,13 @@
 ion-list {
     @extend .display-block;
     @extend .list-#{$plt};
+
+    ion-app.#{$plt} & {
+        &[margin-large]{
+            margin-top:32px;
+        }
+    }
+}
+ion-list-header {
+    @extend .list-header-#{$plt};
 }

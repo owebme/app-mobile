@@ -1,0 +1,16 @@
+ui-datetime {
+    @extend ion-datetime;
+}
+ion-datetime {
+    @extend .pos-rel;
+    @extend .datetime-#{$plt};
+
+    input {
+        @include abs();
+        @extend .opacity-0;
+        @extend .appearance-none;
+    }
+}
+datetime-text {
+    @extend .datetime-text;
+}

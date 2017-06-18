@@ -1,0 +1,51 @@
+<ion-modal-root class="ion-modal">
+
+    <ion-backdrop></ion-backdrop>
+
+    <modal-wrapper>
+
+        <ion-nav>
+
+            <modal-page1></modal-page1>
+
+            <modal-page2 hidden></modal-page2>
+
+        </ion-nav>
+
+    </modal-wrapper>
+
+<script>
+
+    var $ = this;
+
+    $.getPage = function(page){
+        return $.tags["modal-" + page];
+    };
+
+    $.items = [
+        {
+            avatar: "/assets/img/marty-avatar.png",
+            image: "/assets/img/advance-card-bttf.png",
+            title: "Marty McFly",
+            date: "November 5, 1955",
+            text: "Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy."
+        },
+        {
+            avatar: "/assets/img/sarah-avatar.png",
+            image: "/assets/img/advance-card-tmntr.jpg",
+            title: "Sarah Connor",
+            date: "May 12, 1984",
+            text: "I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too."
+        },
+        {
+            avatar: "/assets/img/ian-avatar.png",
+            image: "/assets/img/advance-card-jp.jpg",
+            title: "Dr. Ian Malcolm",
+            date: "June 28, 1990",
+            text: "Your scientists were so preoccupied with whether or not they could, that they didn't stop to think if they should."
+        }
+    ];
+
+</script>
+
+</ion-modal-root>

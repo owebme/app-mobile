@@ -4,4 +4,9 @@ ion-icon {
         line-height:1;
         margin-top:-1px;
     }
+    @each $title in (violet, orange, primary, green, red){
+        &[color=#{$title}]{
+            @extend .c-#{$title};
+        }
+    }
 }

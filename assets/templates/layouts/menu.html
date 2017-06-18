@@ -1,0 +1,55 @@
+<ion-menu side="left" type="{ plt == 'ios' ? 'reveal' : 'overlay' }">
+
+    <menu-inner>
+        <ion-header section="Menu" color="primary"></ion-header>
+        <ion-content>
+            <scroll-content>
+
+                <ion-list>
+                    <button onClick={ onSelect } each={ item in items } no-reorder ion-item>
+                        <item-inner>
+                            <input-wrapper>
+                                <ion-label>
+                                    { item }
+                                </ion-label>
+                            </input-wrapper>
+                        </input-wrapper>
+                    </button>
+                    <button onClick={ hide } ion-item detail-none>
+                        <item-inner>
+                            <input-wrapper>
+                                <ion-label>
+                                    Close Menu
+                                </ion-label>
+                            </input-wrapper>
+                        </input-wrapper>
+                    </button>
+                </ion-list>
+
+            </scroll-content>
+        </ion-content>
+
+    </menu-inner>
+
+<script>
+
+    var $ = this;
+
+    $.items = ['Home', 'Friends', 'Events'];
+
+    $.show = function(){
+        $.trigger("show");
+    }
+
+    $.onSelect = function(){
+        $.trigger("hide");
+        $.pages.open($root.pages.getPage(this.item === "Home" ? "angular" : "css3"));
+    }
+
+    $.hide = function(){
+        $.trigger("hide");
+    }
+
+</script>
+
+</ion-menu>

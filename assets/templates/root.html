@@ -2,14 +2,17 @@
 
     <app-root>
         <ion-statusbar></ion-statusbar>
-
+        <ion-menu></ion-menu>
         <ion-nav>
-            <social-card></social-card>
+            <ion-section></ion-section>
         </ion-nav>
-
     </app-root>
 
+    <ion-modal-root></ion-modal-root>
+
     <ion-alert></ion-alert>
+    <ion-popover></ion-popover>
+    <ion-loading></ion-loading>
     <ion-action-sheet></ion-action-sheet>
 
 <script>
@@ -19,7 +22,17 @@
     this.on("mount", function(){
 
         $Alert = $root.tags["ion-alert"];
+        $Menu = $root.tags["ion-menu"];
+        $Loader = $root.tags["ion-loading"];
+        $Popover = $root.tags["ion-popover"];
         $ActionSheet = $root.tags["ion-action-sheet"];
+
+        $Modals = $root.tags["ion-modal-root"];
+
+        riot.mount("ion-section", "page-popovers");
+
+        $root.$scope = $$($root.root);
+        $root.$pages = $root.$scope.find("app-root > ion-nav");
 
     });
 

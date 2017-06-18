@@ -1,0 +1,151 @@
+ion-popover {
+    @extend .display-none;
+    @extend .popover-#{$plt};
+
+    &[show]{
+        @extend .display-block;
+    }
+}
+popover-arrow {
+    @extend .zIndex-100;
+}
+popover-wrapper {
+    @extend .pos-abs;
+}
+popover-content {
+    @extend .pos-static;
+
+    @if $plt == "ios" {
+        @extend .boxShadow-larger;
+    }
+}
+@if $plt == "ios" {
+    popover-arrow {
+        @extend .popover-arrow;
+    }
+}
+@each $title in (wrapper, content){
+    popover-#{$title} {
+        @extend .popover-#{$title};
+    }
+}
+.ion-page[data-is="page-popovers"]{
+    ion-content {
+        &[data-color="white"] {
+            background-color: #fff;
+        }
+        &[data-color="tan"] {
+            background-color: #f9f1e4;
+        }
+        &[data-color="grey"] {
+            background-color: #4c4b50;
+            color:#fff;
+        }
+        &[data-color="black"] {
+            background-color: #000;
+            color:#fff;
+        }
+    }
+}
+.popover-page {
+    .text-to-change div {
+        margin: 10px auto
+    }
+
+    ion-col, ion-row {
+        padding: 0
+    }
+
+    .text-button {
+        padding-left: 0;
+        text-align: center;
+        min-height: 20px;
+        line-height: 18px
+    }
+
+    .text-button .item-inner {
+        padding-right: 0
+    }
+
+    .text-smaller {
+        font-size: 12px
+    }
+
+    .text-larger {
+        font-size: 16px
+    }
+
+    .row-dots .dot {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin: 10px auto;
+        position: relative
+    }
+
+    .dot-white {
+        background-color: #fff
+    }
+
+    .dot-tan {
+        background-color: #f9f1e4
+    }
+
+    .dot-grey {
+        background-color: #4c4b50
+    }
+
+    .dot-black {
+        background-color: #000
+    }
+
+    .dot.selected {
+        border-width: 2px;
+        border-color: #327eff
+    }
+
+    .text-athelas {
+        font-family: Athelas
+    }
+
+    .text-charter {
+        font-family: Charter
+    }
+
+    .text-iowan {
+        font-family: Iowan
+    }
+
+    .text-palatino {
+        font-family: Palatino
+    }
+
+    .text-san-francisco {
+        font-family: "San Francisco"
+    }
+
+    .text-seravek {
+        font-family: Seravek
+    }
+
+    .text-times-new-roman {
+        font-family: "Times New Roman"
+    }
+
+    .dot, .row-dots, .text-smaller {
+        border-width: .55px
+    }
+
+    .text-smaller {
+        border-right: 1px solid #dedede
+    }
+
+    .row-dots {
+        text-align: center;
+        border-bottom: 1px solid #dedede
+    }
+
+    .dot {
+        border: 2px solid #ccc
+    }
+}

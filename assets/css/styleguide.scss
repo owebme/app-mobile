@@ -1,9 +1,10 @@
 // base
 @import 'base/base';
 @import 'base/fonts';
-@import 'base/main';
-@import 'base/app';
+@import 'base/config';
 @import 'base/mixins';
+@import 'base/app';
+@import 'base/demo';
 
 // theme
 @import 'themes/ionic.build.default';
@@ -13,18 +14,27 @@
 @import 'ui/alert';
 @import 'ui/actionSheet';
 @import 'ui/button';
+@import 'ui/nav';
+@import 'ui/menu';
 @import 'ui/backdrop';
 @import 'ui/page';
+@import 'ui/modal';
 @import 'ui/header';
 @import 'ui/navbar';
 @import 'ui/content';
 @import 'ui/card';
 @import 'ui/item';
 @import 'ui/input';
+@import 'ui/radio';
 @import 'ui/label';
 @import 'ui/list';
 @import 'ui/badge';
 @import 'ui/grid';
+@import 'ui/datetime';
+@import 'ui/switcher';
+@import 'ui/loader';
+@import 'ui/popover';
+// @import 'ui/keyboard';
 @import 'ui/typography';
 @import 'ui/icons';
 @import 'ui/icons.logo';

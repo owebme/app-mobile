@@ -1,10 +1,12 @@
+ion-statusbar ~ ion-nav,
+ion-statusbar ~ ion-menu {
+    ion-navbar {
+        @extend .statusbar-padding;
+    }
+}
 ion-navbar {
     @extend .toolbar;
     @extend .toolbar-#{$plt};
-
-    ion-nav & {
-        @extend .statusbar-padding;
-    }
 }
 toolbar-background {
     @extend .toolbar-background;

@@ -1,7 +1,19 @@
-ion-page {
-    @extend .ion-page;
-    @extend .show-page;
-}
 .ion-page {
+    @include perspective(500);
     @extend .show-page;
+    @extend .zIndex-1;
+}
+ion-content,
+ion-navbar,
+toolbar-background,
+ion-title,
+button[back] ion-icon,
+button[back] back-button-text {
+    @include accelerate();
+    @extend .willChange-tp;
+}
+ion-content {
+    &[ontop]{
+        @extend .willChange-auto;
+    }
 }

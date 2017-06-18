@@ -1,0 +1,12 @@
+<ui-input stacked={ opts.stacked !== undefined }>
+
+    <item-inner>
+        <input-wrapper>
+            <ion-label if={ opts.label } stacked={ opts.stacked !== undefined } fixed={ opts.stacked === undefined }>{ opts.label }</ion-label>
+            <ion-input>
+                <input type={ opts.type || "text" } placeholder={ opts.placeholder } autocomplete="off" autocorrect="off">
+            </ion-input>
+        </input-wrapper>
+    </item-inner>
+
+</ui-input>

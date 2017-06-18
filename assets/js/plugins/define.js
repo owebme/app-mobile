@@ -9,7 +9,7 @@
 
     app.plugins.define.prototype = {
 
-        module: function (namespace, value) {
+        register: function (namespace, value) {
             var parts = namespace.split("."),
                 parent = window[this.__name__],
                 i, l = parts.length;

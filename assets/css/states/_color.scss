@@ -1,4 +1,4 @@
-@each $title, $color in (blue: $blue, blueLight: $blueLight, black: $black, blackLight: $blackLight, white: $white, gray: $gray, grayDark: $grayDark, smoke: $smoke, smokeDark: $smokeDark, snow: $snow, snow458: $snow458, snow447: $snow447, snowDark: $snowDark, green: $green, red: $red){
+@each $title, $color in (primary: $primary, blue: $blue, black: $black, blackLight: $blackLight, white: $white, gray: $gray, grayDark: $grayDark, smoke: $smoke, smokeDark: $smokeDark, snow: $snow, snow458: $snow458, snow447: $snow447, snowDark: $snowDark, green: $green, red: $red, orange: $orange, violet: $violet){
     .bg-#{$title},
     .text-strike[data-color=#{$title}]:after {
         background-color:$color;

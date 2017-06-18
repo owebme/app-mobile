@@ -1,0 +1,17 @@
+.ion-modal {
+    @extend ion-modal;
+    @extend .display-none;
+    @extend .zIndex-1000;
+
+    &[show]{
+        @extend .display-block;
+    }
+    ion-backdrop {
+        visibility:visible !important;
+        @extend .zIndex--1;
+    }
+}
+modal-wrapper {
+    @extend .willChange-transform;
+    @extend .modal-wrapper;
+}

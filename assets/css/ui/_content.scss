@@ -1,10 +1,7 @@
 ion-content {
     @extend .content-#{$plt};
 
-    ion-nav & {
-        @extend .statusbar-padding;
-    }
-    &[fixed]:before {
+    &:before {
         @extend .display-block;
         @extend .content-empty;
         @extend .fixed-content;
@@ -12,60 +9,59 @@ ion-content {
     &[cards-bg]{
         @extend .bg-snow447;
     }
+    @if $plt == "ios" {
+        &[outer]{
+            @extend .outer-content;
+        }
+    }
 }
 scroll-content {
     @extend .scroll-content;
 }
+fixed-content {
+    @extend .fixed-content;
+}
 @if $plt == "ios" {
-    ion-content {
-        &[fixed]:before {
-            margin-top:$toolbar-ios-height;
-
-            ion-nav & {
-                margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
-            }
-        }
-    }
-    scroll-content {
+    scroll-content,
+    fixed-content,
+    ion-content:before {
         margin-top:$toolbar-ios-height;
-
-        ion-nav & {
+    }
+    ion-statusbar ~ ion-nav,
+    ion-statusbar ~ ion-menu {
+        scroll-content,
+        fixed-content,
+        ion-content:before {
             margin-top:$toolbar-ios-height + $cordova-ios-statusbar-padding;
         }
     }
 }
 @if $plt == "md" {
-    ion-content {
-        &[fixed]:before {
-            margin-top:$toolbar-md-height;
-
-            ion-nav & {
-                margin-top:$toolbar-md-height + $cordova-md-statusbar-padding;
-            }
-        }
-    }
-    scroll-content {
+    scroll-content,
+    fixed-content,
+    ion-content:before {
         margin-top:$toolbar-md-height;
-
-        ion-nav & {
+    }
+    ion-statusbar ~ ion-nav,
+    ion-statusbar ~ ion-menu {
+        scroll-content,
+        fixed-content,
+        ion-content:before {
             margin-top:$toolbar-md-height + $cordova-md-statusbar-padding;
         }
     }
 }
 @if $plt == "wp" {
-    ion-content {
-        &[fixed]:before {
-            margin-top:$toolbar-wp-height;
-
-            ion-nav & {
-                margin-top:$toolbar-wp-height + $cordova-wp-statusbar-padding;
-            }
-        }
-    }
-    scroll-content {
+    scroll-content,
+    fixed-content,
+    ion-content:before {
         margin-top:$toolbar-wp-height;
-
-        ion-nav & {
+    }
+    ion-statusbar ~ ion-nav,
+    ion-statusbar ~ ion-menu {
+        scroll-content,
+        fixed-content,
+        ion-content:before {
             margin-top:$toolbar-wp-height + $cordova-wp-statusbar-padding;
         }
     }

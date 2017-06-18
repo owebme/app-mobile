@@ -1,0 +1,21 @@
+<nav-basic>
+
+    <nav-basic-list></nav-basic-list>
+
+    <nav-basic-angular hidden></nav-basic-angular>
+
+    <nav-basic-css3 hidden></nav-basic-css3>
+
+<script>
+
+    var $ = this;
+
+    $Pages.register("root", $);
+
+    $.getPage = function(page){
+        return $.tags["nav-basic-" + page];
+    };
+
+</script>
+
+</nav-basic>

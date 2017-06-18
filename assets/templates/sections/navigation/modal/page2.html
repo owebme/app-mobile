@@ -1,0 +1,90 @@
+<modal-page2 class="ion-page">
+
+    <ion-header section="Map Card"></ion-header>
+
+    <ion-content cards-bg>
+        <scroll-content>
+
+            <ion-card each={ item, i in items } no-reorder>
+                <div class="pos-rel">
+              <img src="{ item.image }">
+              <ion-fab right top>
+                <button ion-fab color="{ item.color }">
+                    <ion-icon name="pin"></ion-icon>
+                </button>
+              </ion-fab>
+              </div>
+              <ion-item>
+                <ion-icon name="football" item-start large></ion-icon>
+                <item-inner onClick={ open }>
+                    <input-wrapper>
+                    <ion-label>
+                        <h2>Museum of Football</h2>
+                        <p>11 N. Way St, Madison, WI 53703</p>
+                  </ion-label>
+                  </input-wrapper>
+              </item-inner>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="wine" item-left large ></ion-icon>
+                <item-inner>
+                    <input-wrapper>
+                    <ion-label>
+                        <h2>Institute of Fine Cocktails</h2>
+                        <p>14 S. Hop Avenue, Madison, WI 53703</p>
+                  </ion-label>
+                  </input-wrapper>
+              </item-inner>
+              </ion-item>
+
+              <ion-item>
+                <span item-left class="fontWeight-bold { c-green : i == 0 }">18 min</span>
+                <span item-left>(2.6 mi)</span>
+                <button ion-button icon-left clear item-end color="{ item.color }">
+                    <span>
+                      <ion-icon name="navigate"></ion-icon>
+                      Start
+                  </span>
+                </button>
+              </ion-item>
+            </ion-card>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    var $ = this;
+
+    this.open = function(){
+        $.trigger("show", $.parent.getPage("page1"));
+    }
+
+    this.items = [
+        {
+            color: "primary",
+            image: "/assets/img/advance-card-map-madison.png",
+            title: "Marty McFly",
+            date: "November 5, 1955",
+            text: "Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy."
+        },
+        {
+            color: "danger",
+            image: "/assets/img/advance-card-map-mario.png",
+            title: "Sarah Connor",
+            date: "May 12, 1984",
+            text: "I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too."
+        },
+        {
+            color: "secondary",
+            image: "/assets/img/advance-card-map-paris.png",
+            title: "Dr. Ian Malcolm",
+            date: "June 28, 1990",
+            text: "Your scientists were so preoccupied with whether or not they could, that they didn't stop to think if they should."
+        }
+    ];
+
+</script>
+
+</modal-page2>

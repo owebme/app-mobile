@@ -1,0 +1,26 @@
+<page-loading class="ion-page">
+
+    <ion-header section="Loading"></ion-header>
+
+    <ion-content padding>
+        <scroll-content>
+
+            <button onClick={ onLoading } ion-button block>
+                <span>Show Loading</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onLoading = function(){
+        $Loader.show();
+        setTimeout(function(){
+            $Loader.hide();
+        }, 3000);
+    };
+
+</script>
+
+</page-loading>

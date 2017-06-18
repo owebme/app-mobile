@@ -1,3 +1,15 @@
+ui-input {
+    @extend ion-item;
+}
+ion-input {
+    @extend .input;
+    @extend .input-#{$plt};
+
+    input {
+        @extend .text-input;
+        @extend .text-input-#{$plt};
+    }
+}
 input-wrapper {
     @extend .input-wrapper;
 }

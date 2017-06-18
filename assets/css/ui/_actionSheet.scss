@@ -25,8 +25,10 @@ button[ion-action-sheet-button]{
     &.c-green {
         @extend .c-green;
     }
-    &[cancel]{
-        @extend .action-sheet-cancel;
+    @if $plt == "ios" {
+        &[cancel]{
+            @extend .action-sheet-cancel;
+        }
     }
     span {
         @extend .button-inner;

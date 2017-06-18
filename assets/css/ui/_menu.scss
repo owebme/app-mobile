@@ -1,0 +1,87 @@
+app-root > ion-nav {
+    @if $plt == "ios" {
+        @include accelerate();
+        @extend .transform-default;
+        @extend .willChange-transform;
+        transition:transform 0.42s $cubic4021;
+    }
+}
+ion-menu {
+    @extend .display-block;
+    @extend .menu-enabled;
+    @extend .pointerEvents-none;
+
+    &:after {
+        @extend .content-empty;
+        @extend .display-block;
+        @include abs();
+        background-color:#000;
+        opacity:0.01;
+        @extend .zIndex--1;
+
+        @if $plt == "ios" {
+            @extend .opacity-30;
+            @extend .zIndex-1;
+            @extend .pointerEvents-none;
+            transition:opacity 0.42s $cubic4021;
+        }
+        @if $plt == "md" or $plt == "wp" {
+            transition:opacity 0.42s $cubic4021;
+        }
+    }
+    &[open]{
+        @extend .pointerEvents-all;
+        @extend .show-menu;
+
+        ~ ion-nav {
+            @extend .menu-content-open;
+
+            @if $plt == "ios" {
+                @media (max-width: 340px) {
+                    transform:translateX(264px) translateZ(0);
+                }
+                transform:translateX(304px) translateZ(0);
+                transition:transform 0.42s $cubic4001;
+            }
+        }
+        menu-inner {
+            @if $plt == "md" or $plt == "wp" {
+                @extend .transform-default;
+                transition:transform 0.42s $cubic4001;
+            }
+        }
+        &:after {
+            @if $plt == "ios" {
+                @extend .opacity-0;
+                transition:opacity 0.42s $cubic4001;
+            }
+            @if $plt == "md" or $plt == "wp" {
+                @extend .opacity-35;
+                transition:opacity 0.42s $cubic4001;
+            }
+        }
+    }
+    ~ ion-nav {
+        @extend .menu-content;
+
+        @if $plt == "ios" {
+            @extend .menu-content-reveal;
+        }
+    }
+}
+menu-inner {
+    @include accelerate();
+    @extend .menu-inner;
+    @extend .willChange-transform;
+
+    @if $plt == "ios" {
+        @extend .transform-default;
+    }
+    @if $plt == "md" or $plt == "wp" {
+        @media (max-width: 340px) {
+            transform:translateX(-312px) translateZ(0);
+        }
+        transform:translateX(-352px) translateZ(0);
+        transition:transform 0.42s $cubic4021;
+    }
+}

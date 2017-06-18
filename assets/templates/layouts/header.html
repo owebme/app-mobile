@@ -1,9 +1,30 @@
-<ion-header>
+<ion-header class="{ opts.color ? 'toolbar-' + plt + '-' + opts.color : null }">
 
     <ion-navbar>
+        <button onClick={ onBack } onUpdate="none" bar-button back>
+            <span>
+                <ion-icon name="arrow-back"></ion-icon>
+                <back-button-text>Back</back-button-text>
+            </span>
+        </button>
+        <button if={ opts.menu !== undefined } onClick={ onMenu } onUpdate="none" icon-only bar-button menutoggle>
+            <span>
+                <ion-icon name="menu"></ion-icon>
+            </span>
+        </button>
+        <ion-buttons start if={ opts.close !== undefined }>
+            <button onClick={ onClose } onUpdate="none" ion-button icon-only bar-button-close>
+                <span>
+                    <span class="{ hidden-hide-when : plt !== 'ios' }">Cancel</span>
+                    <ion-icon class="{ hidden-hide-when : plt === 'ios' }" name="close"></ion-icon>
+                </span>
+            </button>
+        </ion-buttons>
         <ion-buttons start if={ opts.buttons !== undefined }>
             <button ion-button icon-only>
-                <span><ion-icon name="contact"></ion-icon></span>
+                <span>
+                    <ion-icon name="contact"></ion-icon>
+                </span>
             </button>
         </ion-buttons>
         <ion-toolbar-content>
@@ -13,10 +34,41 @@
         </ion-toolbar-content>
         <ion-buttons end if={ opts.buttons !== undefined }>
             <button ion-button icon-only>
-                <span><ion-icon name="search"></ion-icon></span>
+                <span>
+                    <ion-icon name="search"></ion-icon>
+                </span>
+            </button>
+        </ion-buttons>
+        <ion-buttons end if={ opts.options !== undefined }>
+            <button onClick={ onOptions } onUpdate="none" ion-button icon-only>
+                <span>
+                    <ion-icon name="more"></ion-icon>
+                </span>
             </button>
         </ion-buttons>
         <toolbar-background></toolbar-background>
     </ion-navbar>
+
+<script>
+
+    var $ = this;
+
+    $.onBack = function(){
+        $.parent.trigger("onBack");
+    };
+
+    $.onClose = function(){
+        $.parent.trigger("onClose");
+    };
+
+    $.onOptions = function(e){
+        $.parent.trigger("onOptions", e);
+    };
+
+    $.onMenu = function(){
+        $Menu.show();
+    };
+
+</script>
 
 </ion-header>

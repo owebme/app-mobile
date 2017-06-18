@@ -1,0 +1,12 @@
+ion-loading {
+    @extend .display-none;
+
+    &[show]{
+        @extend .display-flex;
+    }
+}
+@each $title in (wrapper, spinner, content){
+    loading-#{$title} {
+        @extend .loading-#{$title};
+    }
+}

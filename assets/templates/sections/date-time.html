@@ -1,0 +1,70 @@
+<date-time class="ion-page">
+
+    <ion-header section="DateTime"></ion-header>
+
+    <ion-content cards-bg>
+        <scroll-content>
+
+            <ion-list margin-large>
+                <ui-input placeholder="Title"></ui-input>
+                <ui-input placeholder="Location"></ui-input>
+            </ion-list>
+
+            <ion-list>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Start Date</ion-label>
+                            <ui-datetime></ui-datetime>
+                        </input-wrapper>
+                    </item-inner>
+                </ion-item>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Start Time</ion-label>
+                            <ui-datetime timeonly></ui-datetime>
+                        </input-wrapper>
+                    </item-inner>
+                </ion-item>
+                <ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Ends</ion-label>
+                            <ui-datetime></ui-datetime>
+                        </input-wrapper>
+                    </item-inner>
+                </ion-item>
+                <button ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Repeat</ion-label>
+                            <ion-note item-end>Never</ion-note>
+                        </input-wrapper>
+                    </item-inner>
+                </button>
+                <button ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Travel Time</ion-label>
+                            <ion-note item-end>None</ion-note>
+                        </input-wrapper>
+                    </item-inner>
+                </button>
+            </ion-list>
+
+            <ion-list>
+                <button ion-item>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>Alert</ion-label>
+                            <ion-note item-end>None</ion-note>
+                        </input-wrapper>
+                    </item-inner>
+                </button>
+            </ion-list>
+
+        </scroll-content>
+    </ion-content>
+
+</date-time>

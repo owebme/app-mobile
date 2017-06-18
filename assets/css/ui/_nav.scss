@@ -1,0 +1,11 @@
+ion-nav {
+    @extend .willChange-transform;
+    
+    &:after {
+        @include abs();
+        @extend .display-block;
+        @extend .content-empty;
+        background-color:#000;
+        @extend .pointerEvents-none;
+    }
+}

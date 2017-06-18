@@ -1,0 +1,44 @@
+<ion-popover>
+
+    <ion-backdrop ref="backdrop" onClick={ hide } onUpdate="none"></ion-backdrop>
+
+    <popover-arrow ref="arrow"></popover-arrow>
+    <popover-wrapper ref="wrapper">
+        <popover-content ref="content">
+            <popover-viewport ref="viewport">
+            </popover-viewport>
+        </popover-content>
+    </popover-wrapper>
+
+<script>
+
+    var $ = this;
+
+    $.show = function(e, content, options){
+        var options = options || {};
+
+        $.content = riot.mount($.refs.viewport, content, options.data)[0];
+
+        if (options.handler && _.isFunction(options.handler)){
+            $.content.on("*", function(ev, value){
+                if (ev && !ev.match(/unmount/)){
+                    options.handler(ev, value);
+                }
+            });
+        }
+
+        Animation.Popovers.show(e, $, $.afterShow && _.isFunction($.afterShow) && function(){
+            $.afterShow();
+        });
+    };
+
+    $.hide = function(){
+        Animation.Popovers.hide($, function(){
+            $.content.unmount(true);
+            if (_.isFunction($.afterHide)) $.afterHide();
+        });
+    };
+
+</script>
+
+</ion-popover>

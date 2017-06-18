@@ -8,5 +8,11 @@ var $defaults = {
     },
     actionSheet: {
         cancel: "Cancel"
+    },
+    loader: {
+        title: "Please wait..."
+    },
+    page: {
+        swipeHide: true
     }
 }

@@ -1,6 +1,12 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 ion-app,
 app-root {
     @extend .app-root;
+    @include perspective(500);
 }
 html.d-no-phone {
     ion-app {
@@ -10,90 +16,3 @@ html.d-no-phone {
         box-shadow:0 0 0 1px #E0E6ED;
     }
 }
-
-// iOS Default Theme
-// ----------------------------------
-
-$font-family-ios-base:                'HelveticaNeue';
-$font-size-ios-base:                  1.5rem;
-
-// iOS Toolbar
-// --------------------------------------------------
-
-$toolbar-ios-height:                  44px;
-$cordova-ios-statusbar-padding:       20px;
-$toolbar-ios-button-font-size:        1.7rem;
-$toolbar-ios-title-font-size:         1.8rem;
-
-// iOS Item
-// --------------------------------------------------
-
-$item-ios-padding-top:                14px;
-$item-ios-padding-bottom:             13px;
-
-
-// iOS Card
-// --------------------------------------------------
-
-$card-ios-title-font-size:            2rem;
-$card-ios-font-size:                  1.5rem;
-
-// iOS Alerts
-// --------------------------------------------------
-
-$alert-ios-max-width:                 320px;
-$alert-ios-content-max-height:        270px;
-$alert-ios-head-padding-top:          15px;
-$alert-ios-head-padding-bottom:       18px;
-$alert-ios-title-font-size:           20px;
-$alert-ios-sub-title-font-size:       15px;
-$alert-ios-message-font-size:         14px;
-$alert-ios-input-padding-start:       10px;
-$alert-ios-input-padding-end:         10px;
-$alert-ios-input-padding-top:         8px;
-$alert-ios-button-min-height:         53px;
-$alert-ios-button-font-size:          18px;
-$alert-ios-radio-label-padding-start: 18px;
-$alert-ios-radio-icon-width:          11px;
-$alert-ios-radio-icon-height:         17px;
-$alert-ios-radio-icon-top:            -12px;
-$alert-ios-radio-icon-left:           0px;
-$alert-ios-checkbox-icon-top:         3px;
-$alert-ios-checkbox-icon-left:        7px;
-$alert-ios-checkbox-size:             24px;
-$alert-ios-checkbox-icon-width:       7px;
-$alert-ios-checkbox-icon-height:      12px;
-
-//-----------
-
-// Material Design Default Theme
-// ----------------------------------
-
-// Material Design Toolbar
-// --------------------------------------------------
-
-$toolbar-md-height:                   56px;
-$cordova-md-statusbar-padding:        29px;
-$toolbar-md-background:               #488aff;
-
-// iOS Alerts
-// --------------------------------------------------
-
-$alert-md-radio-label-padding-start:          32px;
-$alert-md-radio-left:                         18px;
-$alert-md-checkbox-label-padding-start:       32px;
-$alert-md-checkbox-left:                      18px;
-$alert-md-checkbox-icon-top:                  -1px;
-$alert-md-checkbox-icon-width:                5px;
-$alert-md-checkbox-icon-height:               9px;
-
-//-----------
-
-// Windows Default Theme
-// ----------------------------------
-
-// Windows Toolbar
-// --------------------------------------------------
-
-$toolbar-wp-height:                   46px;
-$cordova-wp-statusbar-padding:        31px;

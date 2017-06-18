@@ -1,16 +1,3 @@
-[nohover]{
-    @extend .disable-hover;
-}
-button[ion-item] {
-    @extend .item;
-    @extend .item-#{$plt};
-    @extend .item-block;
-    @extend .transition-default;
-
-    &:active {
-        @extend .activated;
-    }
-}
 button[ion-button] {
     @extend .button;
     @extend .button-#{$plt};
@@ -66,7 +53,90 @@ button[ion-button] {
             }
         }
     }
+    &[bar-button-close]{
+        @extend .transition-none;
+
+        &:active {
+            @extend .opacity-100;
+            @extend .transform-default;
+        }
+    }
+    > span {
+        @extend .button-inner;
+    }
+}
+button[ion-dot]{
+    @extend .dot;
+}
+button[menutoggle]{
+    @extend .bar-button;
+    @extend .bar-button-#{$plt};
+    @extend .bar-button-menutoggle;
+    @extend .bar-button-menutoggle-#{$plt};
+
+    .ion-modal & {
+        @extend .display-none;
+    }
+}
+button[bar-button] {
+    @extend .bar-button;
+    @extend .bar-button-#{$plt};
+    @extend .bar-button-default-#{$plt};
+
+    &[back]{
+        @extend .back-button;
+        @extend .back-button-#{$plt};
+
+        &[show]{
+            @extend .show-back-button;
+
+            ~ button[bar-button] {
+                @extend .display-none;
+            }
+        }
+    }
     span {
         @extend .button-inner;
     }
+    ion-icon[name="arrow-back"] {
+        @extend .back-button-icon-#{$plt};
+    }
+    back-button-text {
+        @extend .back-button-text;
+        @if $plt == "ios" {
+            @extend .back-button-text-#{$plt};
+        }
+    }
+}
+button[ion-fab] {
+    @extend .fab;
+    @extend .fab-#{$plt};
+    @extend .disable-hover;
+    @extend .transition-default;
+
+    &.activated {
+        @extend .scale-95;
+    }
+    &:active {
+        @extend .activated;
+    }
+    @each $title in (light, secondary, danger, dark){
+        &[color=#{$title}]{
+            @extend .button-#{$plt}-#{$title};
+        }
+    }
+}
+button[ion-item] {
+    @extend .item;
+    @extend .item-#{$plt};
+    @extend .item-block;
+    @extend .disable-hover;
+    @extend .transition-default;
+
+    &:active {
+        @extend .activated;
+    }
+}
+button[text-button]{
+    @extend .text-button;
 }

@@ -1,0 +1,60 @@
+.grid-basic-page {
+    p {
+        padding:10px 0 0 10px;
+        margin:0;
+
+        &:first-child {
+            padding-top:15px;
+        }
+    }
+    ion-col div {
+        @extend .flex-centered;
+        background-color: #f0f5ff;
+        border: 1px solid #e6e9ee;
+        border-radius: 2px;
+        padding: 5px;
+        text-align: center;
+    }
+}
+.card-background-page {
+    ion-card {
+        position: relative;
+        text-align: center;
+
+        &:before {
+            @extend .content-empty;
+            @include abs();
+            @extend .bg-overlay;
+            @extend .opacity-50;
+        }
+    }
+    .card-title {
+        font-size: 2.0em;
+        font-weight: bold;
+    }
+    .card-subtitle {
+        font-size: 1.0em;
+    }
+}
+.icons-basic-page {
+    ion-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+        text-align: center;
+        padding: 10px 5px;
+    }
+    ion-icon {
+        font-size: 50px;
+    }
+    ion-row {
+        height: 100%;
+        flex-wrap: wrap;
+    }
+}
+.list-avatar-page {
+    ion-note {
+        font-size: 12px;
+        align-self: flex-start;
+        margin-top: 14px;
+    }
+}

@@ -31,15 +31,25 @@
     <script src="/assets/js/libs/daterangepicker/daterangepicker.js"></script>
     <script src="/assets/js/libs/clockpicker/dist/bootstrap-clockpicker.js"></script>
     <script src="/assets/js/libs/underscore-min.js"></script>
+    <script src="/assets/js/libs/classList.min.js"></script>
     <script src="/assets/js/components/commons/app.js"></script>
     <script src="/assets/js/components/commons/common.js"></script>
     <script src="/assets/js/components/commons/modules.js"></script>
     <script src="/assets/js/components/commons/utils.js"></script>
     <script src="/assets/js/components/commons/afterlag.js"></script>
+    <script src="/assets/js/plugins/define.js"></script>
+    <script src="/assets/js/components/commons/dom/dom.getDimensions.js"></script>
+    <script src="/assets/js/components/commons/dom/dom.getPagePosition.js"></script>
     <script src="/assets/js/components/commons/animation/alert.js"></script>
     <script src="/assets/js/components/commons/animation/actionSheet.js"></script>
+    <script src="/assets/js/components/commons/animation/loader.js"></script>
+    <script src="/assets/js/components/commons/animation/pages.js"></script>
+    <script src="/assets/js/components/commons/animation/modals.js"></script>
+    <script src="/assets/js/components/commons/animation/popovers.js"></script>
+    <script src="/assets/js/components/commons/animation/menu.js"></script>
+    <script src="/assets/js/components/commons/animation/itemSliding.js"></script>
     <script src="/assets/js/components/commons/defaults.js"></script>
-    <script src="/assets/js/libs/anime/anime.js"></script>
+    <script src="/assets/js/libs/anime/anime.update.js"></script>
 
     <!--/ Root /-->
     <script src="/assets/templates/root.html" type="riot/tag"></script>
@@ -47,9 +57,10 @@
     <!--/ Layouts /-->
     <script src="/assets/templates/layouts/statusbar.html" type="riot/tag"></script>
     <script src="/assets/templates/layouts/header.html" type="riot/tag"></script>
+    <script src="/assets/templates/layouts/menu.html" type="riot/tag"></script>
 
     <!--/ Sections /-->
-    <script src="/assets/templates/sections/action-sheet-basic.html" type="riot/tag"></script>
+    <!-- <script src="/assets/templates/sections/action-sheet-basic.html" type="riot/tag"></script>
     <script src="/assets/templates/sections/alert-basic.html" type="riot/tag"></script>
     <script src="/assets/templates/sections/alert-prompt.html" type="riot/tag"></script>
     <script src="/assets/templates/sections/alert-confirm.html" type="riot/tag"></script>
@@ -71,20 +82,41 @@
     <script src="/assets/templates/sections/card-images.html" type="riot/tag"></script>
     <script src="/assets/templates/sections/card-background.html" type="riot/tag"></script>
     <script src="/assets/templates/sections/social-card.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/map-card.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/date-time.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/grid-basic.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/icons-basic.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/fixed-labels.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/list-dividers.html" type="riot/tag"></script> -->
+    <script src="/assets/templates/sections/icon-list.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/avatar-list.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/sliding-list.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/thumbnails-basic.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/page-loading.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/menu-basic.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/page-popovers.html" type="riot/tag"></script>
+
+    <script src="/assets/templates/sections/navigation/index.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/list.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/angular.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/css3.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/modal/index.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/modal/page1.html" type="riot/tag"></script>
+    <script src="/assets/templates/sections/navigation/modal/page2.html" type="riot/tag"></script>
 
     <!--/ Modules /-->
     <script src="/assets/templates/modules/alert.html" type="riot/tag"></script>
     <script src="/assets/templates/modules/action-sheet.html" type="riot/tag"></script>
-
+    <script src="/assets/templates/modules/loader.html" type="riot/tag"></script>
+    <script src="/assets/templates/modules/popover.html" type="riot/tag"></script>
+    <script src="/assets/templates/modules/popovers/colors.html" type="riot/tag"></script>
 
     <!--/ UI elements /-->
+    <script src="/assets/templates/ui/input.html" type="riot/tag"></script>
+    <script src="/assets/templates/ui/switcher.html" type="riot/tag"></script>
+    <script src="/assets/templates/ui/datetime.html" type="riot/tag"></script>
 
-    <script>
-        window.plt = "ios";
-        riot.compile(function(){
-            riot.mount("*");
-        });
-    </script>
+    <script src="/assets/js/init.js"></script>
 
 </body>
 </html>

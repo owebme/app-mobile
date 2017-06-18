@@ -1,0 +1,61 @@
+<popover-colors>
+
+    <ion-list class="popover-page">
+        <ion-row>
+            <ion-col each={ item in options.size }>
+                <button onClick={ change.size } class="text-{ item }" ion-item detail-none text-button>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>A</ion-label>
+                        </input-wrapper>
+                    </item-inner>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-dots">
+            <ion-col each={ item in options.colors }>
+                <button onClick={ change.color } class="dot-{ item } { selected : item == parent.opts.color }" ion-dot></button>
+            </ion-col>
+        </ion-row>
+        <ion-item onClick={ change.font } each={ item in options.fonts } class="text-{ item.toLowerCase() }" item-radio checked={ item == parent.opts.font }>
+            <item-inner>
+                <input-wrapper>
+                    <ion-label>{ item }</ion-label>
+                </input-wrapper>
+                <ion-radio>
+                    <radio-icon>
+                        <radio-inner></radio-inner>
+                    </radio-icon>
+                </ion-radio>
+            </item-inner>
+        </ion-item>
+    </ion-list>
+
+<script>
+
+    var $ = this;
+
+    $.options = {
+        size: ['smaller', 'larger'],
+        colors: ['white', 'tan', 'grey', 'black'],
+        fonts: ['Athelas', 'Charter', 'Iowan', 'Palatino', 'San Francisco', 'Seravek', 'Times New Roman']
+    };
+
+    $.change = {
+        size: function(){
+            $.opts.size = this.item;
+            $.trigger("size", this.item);
+        },
+        color: function(){
+            $.opts.color = this.item;
+            $.trigger("color", this.item);
+        },
+        font: function(){
+            $.opts.font = this.item;
+            $.trigger("font", this.item);
+        }
+    }
+
+</script>
+
+</popover-colors>

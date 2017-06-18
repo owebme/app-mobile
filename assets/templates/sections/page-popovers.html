@@ -1,0 +1,41 @@
+<page-popovers class="ion-page">
+
+    <ion-header section="Popovers" options></ion-header>
+
+    <ion-content padding data-color="{ data.color }">
+        <scroll-content>
+
+            <div style="font-size:{ data.size }; font-family: { data.font };">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel ipsum in purus mollis dictum eget vitae purus. Nulla ultrices est odio, a maximus velit pretium ac. Donec vel elementum mi. Proin elementum pulvinar neque, in lacinia nibh tempus auctor. Nam sapien velit, commodo ac nibh a, maximus ullamcorper nunc. Integer luctus tortor dignissim, dictum neque at, scelerisque purus. Vivamus nec erat vel magna posuere euismod.  ac augue eu tellus tincidunt fermentum eget sit amet nunc. Donec sit amet mi libero. Cras nunc arcu, ultrices nec sapien eu, convallis posuere libero. Pellentesque vulputate lacus eros, at lobortis lorem egestas et. Vestibulum tempus quam in efficitur lobortis. Maecenas consectetur consequat sem pharetra aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos.</div>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    var $ = this;
+
+    $.data = {
+        size: "larger",
+        color: "white",
+        font: "San Francisco"
+    };
+
+    $.on("onOptions", function(e){
+        $.show(e);
+    });
+
+    $.show = function(e){
+        $Popover.show(e, "popover-colors", {
+            data: $.data,
+            handler: function(ev, value){
+                if ($.data[ev]){
+                    $.data[ev] = value;
+                    $.update();
+                }
+            }
+        });
+    };
+
+</script>
+
+</page-popovers>

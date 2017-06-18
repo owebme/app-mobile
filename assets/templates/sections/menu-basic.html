@@ -1,0 +1,23 @@
+<menu-basic class="ion-page">
+
+    <ion-header section="Menus" menu></ion-header>
+
+    <ion-content padding>
+        <scroll-content>
+
+            <button onClick={ onMenu } ion-button block>
+                <span>Toggle Menu</span>
+            </button>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    this.onMenu = function(){
+        $Menu.show();
+    };
+
+</script>
+
+</menu-basic>

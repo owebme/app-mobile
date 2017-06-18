@@ -1,0 +1,23 @@
+<ui-switcher onClick={ onSwitch } checked={ checked }>
+
+    <switcher-icon>
+        <switcher-inner>
+        </switcher-inner>
+    </switcher-icon>
+
+<script>
+
+    var $ = this;
+
+    $.on("mount", function(){
+        $.checked = $.opts.checked !== undefined ? true : false;
+        $.update();
+    });
+
+    $.onSwitch = function(){
+        $.checked = !$.checked;
+    };
+
+</script>
+
+</ui-switcher>

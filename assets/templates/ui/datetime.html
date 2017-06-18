@@ -1,0 +1,30 @@
+<ui-datetime>
+
+    <input onInput={ onInput } type="{ type }" value="{ value }">
+    <datetime-text>{ title }</datetime-text>
+
+<script>
+
+    var $ = this;
+
+    $.format = "MMM DD YYYY";
+
+    $.on("mount", function(){
+        $.type = $.opts.timeonly === undefined ? "date" : "time";
+        $.format = $.opts.format || ($.type == "time" ? "HH:MM" : $.format);
+        $.refresh($.opts.value || moment().format());
+        $.update();
+    });
+
+    $.onInput = function(e){
+        $.refresh(e.target.value);
+    };
+
+    $.refresh = function(value){
+        $.value = value;
+        $.title = $.value.match(/^\d+\:\d+/) ? $.value : moment($.value).format($.format);
+    };
+
+</script>
+
+</ui-datetime>

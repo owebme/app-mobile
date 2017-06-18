@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var scss = require('gulp-scss');
 var csso = require('gulp-csso');
 var base64 = require('gulp-base64');
 var autoprefixer = require('gulp-autoprefixer');
@@ -9,6 +10,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
 var uncss = require('gulp-uncss');
+var replace = require('gulp-replace');
 var combiner = require('stream-combiner2').obj;
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -61,10 +63,11 @@ gulp.task('uncss', function () {
 
 gulp.task('babel', function() {
 	return combiner(
-		gulp.src('assets/js/components/commons/ionic/animation.js'),
+		gulp.src('assets/js/components/commons/ionic/anime.js'),
 		babel({
             presets: ['es2015']
         }),
+		rename('anime.update.js'),
 		gulp.dest('assets/js/components/commons/ionic/dist')
 	).on('error', notify.onError({
 		"sound": false,

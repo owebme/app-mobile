@@ -1,0 +1,76 @@
+<nav-basic-list class="ion-page">
+
+    <ion-header section="Navigation" menu></ion-header>
+
+    <ion-content>
+        <scroll-content>
+
+            <ion-list>
+                <button each={ item in items } onClick={ onSelect } onUpdate="none" icon-left ion-item>
+                    <ion-icon item-start name="{ item.icon }" style="color:{ item.color }"></ion-icon>
+                    <item-inner>
+                        <input-wrapper>
+                            <ion-label>{ item.title }</ion-label>
+                        </input-wrapper>
+                    </item-inner>
+                </button>
+            </ion-list>
+
+        </scroll-content>
+    </ion-content>
+
+<script>
+
+    var $ = this;
+
+    $.onSelect = function(){
+        var title = this.item.title.toLowerCase();
+        if (title === "html5"){
+            $Modals.trigger("show");
+        }
+        else {
+            $.trigger("show", $.parent.getPage(this.item.title.toLowerCase()));
+        }
+    };
+
+    $.items = [
+        {
+            title: "Angular",
+            icon: "logo-angular",
+            color: "rgb(230, 49, 53)"
+        },
+        {
+            title: "CSS3",
+            icon: "logo-css3",
+            color: "rgb(12, 169, 234)"
+        },
+        {
+            title: "HTML5",
+            icon: "logo-html5",
+            color: "rgb(244, 101, 41)"
+        },
+        {
+            title: "JavaScript",
+            icon: "logo-javascript",
+            color: "rgb(255, 212, 57)"
+        },
+        {
+            title: "Sass",
+            icon: "logo-sass",
+            color: "rgb(206, 98, 150)"
+        },
+        {
+            title: "NodeJS",
+            icon: "logo-nodejs",
+            color: "rgb(120, 189, 67)"
+        },
+        {
+            title: "Python",
+            icon: "logo-python",
+            color: "rgb(53, 117, 172)"
+        }
+    ]
+
+</script>
+
+</nav-basic-list>

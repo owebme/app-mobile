@@ -2,6 +2,27 @@ ion-item {
     @extend .item;
     @extend .item-block;
     @extend .item-#{$plt};
+
+    &[stacked]{
+        @extend .item-label-stacked;
+    }
+}
+ion-item-sliding {
+    @extend .item-wrapper;
+}
+ion-item-options {
+    width:auto !important;
+}
+ion-item-divider {
+    @extend .item;
+    @extend .item-#{$plt};
+    @extend .item-divider-#{$plt};
+
+    @each $title in (light, primary, secondary, danger, dark){
+        &[color=#{$title}]{
+            @extend .item-divider-#{$plt}-#{$title};
+        }
+    }
 }
 item-inner {
     @extend .item-inner;
